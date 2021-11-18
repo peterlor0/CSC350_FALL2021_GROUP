@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2021-11-18" view-index="1" gantt-divider-location="300" resource-divider-location="300" version="3.1.3102" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2021-11-18" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="3.1.3103" locale="en_US">
     <description/>
     <view zooming-state="default:3" id="gantt-chart">
         <field id="tpd3" name="Name" width="167" order="0"/>
@@ -82,15 +82,19 @@
         <allocation task-id="7" resource-id="0" function="Default:0" responsible="false" load="50.0"/>
         <allocation task-id="9" resource-id="0" function="Default:0" responsible="true" load="50.0"/>
         <allocation task-id="45" resource-id="0" function="Default:0" responsible="true" load="50.0"/>
+        <allocation task-id="17" resource-id="0" function="Default:0" responsible="true" load="0.0"/>
         <allocation task-id="0" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="9" resource-id="1" function="Default:0" responsible="false" load="50.0"/>
         <allocation task-id="45" resource-id="1" function="Default:0" responsible="false" load="50.0"/>
         <allocation task-id="3" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="7" resource-id="1" function="Default:0" responsible="false" load="50.0"/>
+        <allocation task-id="15" resource-id="1" function="Default:0" responsible="true" load="0.0"/>
+        <allocation task-id="18" resource-id="1" function="Default:0" responsible="true" load="0.0"/>
         <allocation task-id="8" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="4" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="2" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
         <allocation task-id="54" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="58" resource-id="2" function="Default:0" responsible="true" load="0.0"/>
     </allocations>
     <vacations/>
     <previous/>
