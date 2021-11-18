@@ -74,7 +74,7 @@
     </tasks>
     <resources>
         <resource id="0" name="Jianbin Tang" function="Default:0" contacts="" phone=""/>
-        <resource id="1" name="Luis Feng" function="Default:0" contacts="" phone=""/>
+        <resource id="1" name="Luis Feng Wu" function="Default:0" contacts="" phone=""/>
         <resource id="2" name="Songliang Ye" function="Default:0" contacts="" phone=""/>
     </resources>
     <allocations>
