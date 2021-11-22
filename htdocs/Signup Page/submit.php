@@ -19,7 +19,7 @@
   }
 
   $sql = "INSERT INTO mgr.userdata (Username, Password, RoomNum)
-    VALUES ('{$_POST['username']}', '{$_POST['password']}', '{$_POST['roomno']}')";
+    VALUES ('{$_POST['username']}', '{$_POST['password']}', {$_POST['roomnum']})";
 
   if ($conn->query($sql) === TRUE) {
     echo "<p>user created</p><br>";
