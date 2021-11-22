@@ -18,8 +18,8 @@
     die("Connection failed: " . $conn->connect_error);
   }
 
-  $sql = "INSERT INTO mgr.userdata (Username, Password)
-    VALUES ('{$_POST['username']}', '{$_POST['password']}')";
+  $sql = "INSERT INTO mgr.userdata (Username, Password, RoomNum)
+    VALUES ('{$_POST['username']}', '{$_POST['password']}', '{$_POST['roomno']}')";
 
   if ($conn->query($sql) === TRUE) {
     echo "<p>user created</p><br>";
