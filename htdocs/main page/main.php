@@ -29,7 +29,9 @@
 
         if ($row) {
             if ($row[1] == $_POST['password']) {
-                echo "welcome back";
+                echo "welcome back! " . $_POST['username'] . "<br>";
+                echo "Room Number: " . "{$row[2]}";
+                
             } else {
                 echo "password error";
             }
