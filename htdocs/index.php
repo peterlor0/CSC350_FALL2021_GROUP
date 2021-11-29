@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require "shared.php"?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared.php"?>
 
 <html>
 
@@ -49,7 +49,7 @@
     }
     ?>
 
-    <form action="#" method="post">
+    <form method="post">
         <table class="center">
             <tr>
                 <td>

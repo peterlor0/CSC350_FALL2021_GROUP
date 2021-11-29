@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require "../shared.php"?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared.php"?>
 
 <html>
 
