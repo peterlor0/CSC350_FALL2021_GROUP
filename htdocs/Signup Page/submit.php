@@ -26,6 +26,7 @@
     echo "<a href='../index.php'>Continue to login</a>";
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "<a href='./signup.html'>Retry</a>";
   }
 
   $conn->close();

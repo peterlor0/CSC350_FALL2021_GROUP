@@ -4,7 +4,7 @@ function submitCheck(){
     
     //return false to cancel submit
 
-    if(passwd.length < 8){
+    if(passwd.length < 1){
         alert("password must have at least 8 characters");
         return false;
     }else{
