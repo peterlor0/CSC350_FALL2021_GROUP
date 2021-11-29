@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require "./shared.php"?>
+<?php require "shared.php"?>
 
 <html>
 

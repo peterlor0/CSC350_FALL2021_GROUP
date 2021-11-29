@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?php require "../shared.php"?>
+
 <html>
 
 <head>
