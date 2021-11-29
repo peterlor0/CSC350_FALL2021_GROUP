@@ -6,7 +6,7 @@
 
 <head>
     <title></title>
-    <link rel="stylesheet" href="./../shared.css">
+    <link rel="stylesheet" href="/shared.css">
 </head>
 
 <body>
