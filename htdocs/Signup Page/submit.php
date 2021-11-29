@@ -23,7 +23,7 @@
 
   if ($conn->query($sql) === TRUE) {
     echo "<p>user created</p><br>";
-    echo "<a href='../index.html'>Continue to login</a>";
+    echo "<a href='../index.php'>Continue to login</a>";
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
