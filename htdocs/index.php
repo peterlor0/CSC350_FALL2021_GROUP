@@ -8,7 +8,7 @@
     <title></title>
     <link rel="stylesheet" href="./shared.css">
     <link rel="stylesheet" href="./index.css">
-    
+
 </head>
 
 <body>
