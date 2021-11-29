@@ -1,4 +1,7 @@
+<!DOCTYPE html>
 <html>
+
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared.php" ?>
 
 <head>
   <link rel="stylesheet" href="./../shared.css">
@@ -6,13 +9,7 @@
 
 <body>
   <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "root";
-
-
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password);
+  $conn = startSQLConnect();
   // Check connection
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
