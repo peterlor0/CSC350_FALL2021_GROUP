@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared.php"?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared.php" ?>
 
 <html>
 
@@ -18,7 +18,8 @@
         $ret = $conn->query($sql);
         $row = mysqli_fetch_row($ret);
         echo "welcome back! " . $_SESSION['username'] . "<br>";
-        echo "Room Number: " . $row[2];
+        echo "Room Number: " . $row[2] . "<br>";
+        echo "<a href='logout.php'>Log out</a>";
     } else {
         echo "error";
     }

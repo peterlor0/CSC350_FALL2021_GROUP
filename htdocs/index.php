@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared.php"?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared.php" ?>
 
 <html>
 
@@ -8,9 +8,11 @@
     <title></title>
     <link rel="stylesheet" href="./shared.css">
     <link rel="stylesheet" href="./index.css">
+    
 </head>
 
 <body>
+
     <?php
     if (isset($_POST['username'])) {
         $conn = startSQLConnect();
