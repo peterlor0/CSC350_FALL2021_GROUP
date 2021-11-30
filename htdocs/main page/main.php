@@ -20,6 +20,7 @@
         echo "welcome back! " . $_SESSION['username'] . "<br>";
         echo "Room Number: " . $row[2] . "<br>";
         echo "<a href='logout.php'>Log out</a>";
+        $conn->close();
     } else {
         echo "error";
     }
