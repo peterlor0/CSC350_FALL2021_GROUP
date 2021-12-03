@@ -21,6 +21,9 @@
         echo "Room Number: " . $row[2] . "<br>";
         echo "<a href='logout.php'>Log out</a>";
         $conn->close();
+        ?>
+        <a href="../schedule page/schedule.html">Schedule...</a>
+        <?php
     } else {
         echo "error";
     }
