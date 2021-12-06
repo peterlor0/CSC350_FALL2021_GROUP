@@ -83,7 +83,8 @@ function isDateTimeInRange($target, $start, $end)
 /** Gets the current time zone offset (in second)
  * @return int
  */
-function getTimeZoneOffset(){
+function getTimeZoneOffset()
+{
     return date("Z", time());
 }
 
@@ -103,6 +104,29 @@ function getNextSlotDateTime()
     $now -= $off;
 
     return date("Y-m-d h:i:s", $now);
+}
+
+/** Create an array that contains slots by a given range
+ *  Input datetime must 3 hour align
+ *  @param string Starting datetime (inclusive)
+ *  @param string Ending datetime  (exclusive)
+ */
+function generateSlotsByRange($_start, $_end)
+{
+    $threeHours = 3600 * 3;
+
+    $start = strtotime($_start);
+    $end = strtotime($_end);
+
+    $arr = array();
+
+    for ($i = $start; $i < $end; $i += $threeHours) {
+        array_push($arr,date("Y-m-d H:i:s", $i));
+    }
+
+    //var_dump($arr);
+
+    return $arr;
 }
 
 ?>

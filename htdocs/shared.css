@@ -12,6 +12,10 @@ a{
     color:skyblue;
 }
 
+ul{
+    list-style-type: none;
+}
+
 button,input[type="submit"]{
     border-width: 0px;
     background-color: rgb(108, 197, 167);
