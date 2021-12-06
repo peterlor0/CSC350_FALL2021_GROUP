@@ -17,7 +17,6 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
 <body>
 
     <?php
-    echo getDateOfThisSunday();
 
     if (isset($_POST['username'])) {
         $conn = startSQLConnect();
