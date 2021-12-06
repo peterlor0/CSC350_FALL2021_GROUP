@@ -103,7 +103,7 @@ function getNextSlotDateTime()
 
     $now -= $off;
 
-    return date("Y-m-d h:i:s", $now);
+    return date("Y-m-d H:i:s", $now);
 }
 
 /** Create an array that contains slots by a given range
