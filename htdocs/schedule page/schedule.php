@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <?php 
+        session_start();
+        checkLoginState();
+    ?>
+
     <p><h1>Select a slot:</h1></p>
     <ul>
         <li><label><input type="radio" name="slot" value="1">1</label></li>

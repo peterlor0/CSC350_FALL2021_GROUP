@@ -23,7 +23,7 @@
     echo "<a href='logout.php'>Log out</a>";
     $conn->close();
     ?>
-    <a href="../schedule page/schedule.html">Schedule...</a>
+    <a href="../schedule page/schedule.php">Schedule...</a>
     <?php
     ?>
 </body>
