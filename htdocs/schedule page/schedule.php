@@ -33,7 +33,7 @@
                     echo "<hr>";
                 }
 
-                $output = date("Y-m-d, l, H:i", strtotime($i)) . " - " . date("H:i", strtotime($i) + 3600 * 3);
+                $output = date("Y-m-d, l, H:i", strtotime($i)) . " - " . date("H:i", strtotime($i) + 3600 * 3 - 1);
 
                 echo "<li><label><input type='radio' name='slot' value='{$output}'>{$output}</label></li>";
 
