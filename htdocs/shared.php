@@ -1,5 +1,8 @@
 <?php
 
+//set timezone
+date_default_timezone_set("America/new_york");
+
 /** Start a sql connection
 * @return conn The sql connection object
 */
@@ -32,6 +35,20 @@ function checkLoginState(){
     if(!isset($_SESSION['username'])){
         redirectPageTo("/index.php");
     }
+}
+
+/** Get the date of this Monday.
+ * @return string date
+ */
+function getDateOfThisMonday(){
+    return date("Y-m-d H:i:s", strtotime("this week"));
+}
+
+/** Get the date of this Sunday.
+ * @return string date
+ */
+function getDateOfThisSunday(){
+    return date("Y-m-d H:i:s", strtotime("this week - 1 day"));
 }
 
 ?>
