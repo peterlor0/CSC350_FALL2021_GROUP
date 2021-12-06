@@ -31,9 +31,11 @@
 
                 if ($day != $day2) {
                     echo "<hr>";
+                    $tmp = date("Y-m-d, l", strtotime($i));
+                    echo "<p class='dateTitle'>{$tmp}</p>";
                 }
 
-                $output = date("Y-m-d, l, H:i", strtotime($i)) . " - " . date("H:i", strtotime($i) + 3600 * 3 - 1);
+                $output = date("H:i", strtotime($i)) . " - " . date("H:i", strtotime($i) + 3600 * 3 - 1);
 
                 echo "<li><label><input type='radio' name='slot' value='{$i}'>{$output}</label></li>";
 

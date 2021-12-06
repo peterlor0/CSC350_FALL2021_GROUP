@@ -7,3 +7,8 @@
     overflow: auto;
     height: 600px;
 }
+
+.dateTitle{
+    font-size: 20px;
+    color:gold;
+}
