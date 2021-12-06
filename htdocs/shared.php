@@ -70,12 +70,12 @@ function isDateTimeInRange($target, $start, $end)
 
     if ($t_target && $t_start && $t_end) {
         if ($t_target >= $t_start && $t_target <= $t_end) {
-            echo "true" . "<br>";
+            //echo "true" . "<br>";
             return true;
         }
     }
 
-    echo "false" . "<br>";
+    //echo "false" . "<br>";
     return false;
 }
 
