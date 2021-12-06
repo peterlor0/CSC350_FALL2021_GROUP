@@ -48,8 +48,8 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
         if ($flag) {
             session_start();
             $_SESSION['username'] = $_POST['username'];
-            header("Location: ./main page/main.php");
-            exit();
+            
+            redirectPageTo("/main page/main.php");
         }
     }
     ?>
