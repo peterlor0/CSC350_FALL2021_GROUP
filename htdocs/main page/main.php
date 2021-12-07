@@ -16,15 +16,27 @@
 
     $conn = startSQLConnect();
     $sql = "SELECT * FROM mgr.userdata WHERE Username='{$_SESSION['username']}'";
-    $ret = $conn->query($sql);
-    $row = mysqli_fetch_row($ret);
+    $query = $conn->query($sql);
+    $row = mysqli_fetch_row($query);
     echo "<h1>Welcome back! {$_SESSION['username']}</h1>";
     echo "<p>Room Number: {$row[2]}</p>";
+
+    $date = getDateTimeRangeOfThisWeekSchedule();
+    $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$_SESSION['username']}'";
+    $query = $conn->query($sql);
+
+    if ($query && $query->num_rows > 0) {
+        $ret = mysqli_fetch_assoc($query);
+        echo "Your schedule: " . date("Y-m-d, l, H:i", strtotime($ret['Date'])) . "<br>";
+    } else {
+    ?>
+        <a href="../schedule page/schedule.php">Schedule...</a><br>
+    <?php
+    }
+
     echo "<a href='logout.php'>Logout</a><br>";
     $conn->close();
-    ?>
-    <a href="../schedule page/schedule.php">Schedule...</a>
-    <?php
+
     ?>
 </body>
 

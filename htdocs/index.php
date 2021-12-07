@@ -16,6 +16,8 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
 <body>
 
     <?php
+    
+
     if (isset($_POST['username'])) {
         $conn = startSQLConnect();
 

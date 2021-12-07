@@ -46,15 +46,24 @@ function checkLoginState()
  */
 function getDateOfThisMonday()
 {
-    return date("Y-m-d H:i:s", strtotime("this week"));
+    return date("Y-m-d", strtotime("this week")) . " 00:00:00";
 }
 
-/** Get the date of this Sunday.
- * @return string datetime
+/** Monday 0:00 to next Monday 0:00
+ * @return array arr['start'] / arr['end']
  */
-function getDateOfThisSunday()
-{
-    return date("Y-m-d H:i:s", strtotime("this week - 1 day"));
+function getDateTimeRangeOfThisWeekSchedule(){
+    $start = getDateOfThisMonday();
+    $end = date("Y-m-d", strtotime("this week + 7 day")) . " 00:00:00";
+
+    $arr = array(
+        "start" => $start,
+        "end"   => $end
+    );
+
+    //var_dump($arr);
+
+    return $arr;
 }
 
 /** Check if a time in a specific range
@@ -127,6 +136,47 @@ function generateSlotsByRange($_start, $_end)
     //var_dump($arr);
 
     return $arr;
+}
+
+/** array a - array b with datetime list
+ * @param array a  datetime list1
+ * @param array b  datetime list2
+ * @return array  list of diff datetime list
+ */
+function diffDateTimeList($a, $b){
+    $arr1 = array();
+    $arr2 = array();
+
+    foreach($a as &$i){
+        array_push($arr1, strtotime($i));
+    }
+
+    foreach($b as &$i){
+        array_push($arr2, strtotime($i));
+    }
+
+    $arr3 = array_diff($arr1, $arr2);
+
+    $arr4=array();
+
+    foreach($arr3 as &$i){
+        array_push($arr4, date("Y-m-d H:i:s", $i));
+    }
+
+    return $arr4;
+}
+
+function isUserScheduleThisWeek($conn, $username){
+    $date = getDateTimeRangeOfThisWeekSchedule();
+
+    $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$username}'";
+    $query = $conn->query($sql);
+
+    if($query && $query->num_rows > 0){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 ?>
