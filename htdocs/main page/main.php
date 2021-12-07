@@ -20,7 +20,7 @@
     $row = mysqli_fetch_row($ret);
     echo "welcome back! " . $_SESSION['username'] . "<br>";
     echo "Room Number: " . $row[2] . "<br>";
-    echo "<a href='logout.php'>Log out</a>";
+    echo "<a href='logout.php'>Logout</a><br>";
     $conn->close();
     ?>
     <a href="../schedule page/schedule.php">Schedule...</a>
