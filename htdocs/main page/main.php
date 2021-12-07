@@ -18,8 +18,8 @@
     $sql = "SELECT * FROM mgr.userdata WHERE Username='{$_SESSION['username']}'";
     $ret = $conn->query($sql);
     $row = mysqli_fetch_row($ret);
-    echo "welcome back! " . $_SESSION['username'] . "<br>";
-    echo "Room Number: " . $row[2] . "<br>";
+    echo "<h1>Welcome back! {$_SESSION['username']}</h1>";
+    echo "<p>Room Number: {$row[2]}</p>";
     echo "<a href='logout.php'>Logout</a><br>";
     $conn->close();
     ?>

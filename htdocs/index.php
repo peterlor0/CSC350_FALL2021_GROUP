@@ -8,7 +8,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
 
 <head>
     <title></title>
-    <link rel="stylesheet" href="./shared.css">
+    <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="./index.css">
 
 </head>
