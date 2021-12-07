@@ -45,7 +45,7 @@
         <h2>Select a slot:</h2>
         </p>
         <form action="./submit.php" method="post">
-            <div class="slotList">
+            <div class="slotList center">
                 <ul>
                     <?php
                     $day = "";
@@ -61,7 +61,7 @@
 
                         $output = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
 
-                        echo "<li><label><input type='radio' name='slot' onclick='onClick()' value='{$i}'>{$output}</label></li>";
+                        echo "<li><label><input type='radio' name='slot' onclick='onClick(this)' value='{$i}'>{$output}</label></li>";
 
                         $day = $day2;
                     }
@@ -70,10 +70,14 @@
                 </ul>
 
             </div>
-            <p><input id="submit" type="submit" value="Submit" disabled></p>
+            <p>Your Selection: <span id="selection" class="selection">None</span></p>
+            <p>
+                <input id="submit" type="submit" value="Submit" disabled>
+                <a href="../main page/main.php"><button type="button">Ok, I Give Up</button></a>
+            </p>
         </form>
+        
 
-        <p><a href="../main page/main.php"><button>Ok, I Give Up</button></a></p>
 
     <?php
 

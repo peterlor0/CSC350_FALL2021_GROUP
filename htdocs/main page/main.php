@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/shared.css">
 </head>
 
-<body>
+<body style="text-align: center;">
     <?php
     session_start();
     checkLoginState();
