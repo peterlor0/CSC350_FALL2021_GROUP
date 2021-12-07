@@ -78,7 +78,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
             </tr>
             <tr>
                 <td colspan="2">
-                    <a href="./Signup Page/signup.html">Signup</a>
+                    Don't have an account? <a href="./Signup Page/signup.html">Signup</a> now
                 </td>
             </tr>
         </table>
