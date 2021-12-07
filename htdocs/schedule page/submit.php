@@ -28,6 +28,8 @@
         }
 
         $conn->close();
+    }else{
+        redirectPageTo("/main page/main.php");
     }
 
     ?>

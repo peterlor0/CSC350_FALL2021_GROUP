@@ -20,7 +20,7 @@
 
     //check if user has scheduled
     if (isUserScheduleThisWeek($conn, $_SESSION['username'])) {
-        echo "already schedule";
+        redirectPageTo("/main page/main.php");
     } else {
         $date = getDateTimeRangeOfThisWeekSchedule();
 
