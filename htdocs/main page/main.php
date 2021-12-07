@@ -27,10 +27,12 @@
 
     if ($query && $query->num_rows > 0) {
         $ret = mysqli_fetch_assoc($query);
-        echo "Your schedule: " . date("Y-m-d, l, H:i", strtotime($ret['Date'])) . "<br>";
+        $tm = strtotime($ret['Date']);
+
+        echo "Your schedule: " . date("Y-m-d, l, h:i A", $tm) . " - " . date("h:i A", $tm + 3600 * 3 - 1) . "<br>";
     } else {
     ?>
-        <a href="../schedule page/schedule.php">Schedule...</a><br>
+        <a href="../schedule page/schedule.php">Schedule...</a><br><br>
     <?php
     }
 

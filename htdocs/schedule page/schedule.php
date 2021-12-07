@@ -22,6 +22,8 @@
     if (isUserScheduleThisWeek($conn, $_SESSION['username'])) {
         redirectPageTo("/main page/main.php");
     } else {
+        echo "<h1>Username: {$_SESSION['username']}</h1>";
+
         $date = getDateTimeRangeOfThisWeekSchedule();
 
         $fullSlotsList = generateSlotsByRange(getNextSlotDateTime(), $date['end']);
@@ -40,7 +42,7 @@
 
     ?>
         <p>
-        <h1>Select a slot:</h1>
+        <h2>Select a slot:</h2>
         </p>
         <form action="./submit.php" method="post">
             <div class="slotList">
@@ -57,7 +59,7 @@
                             echo "<p class='dateTitle'>{$tmp}</p>";
                         }
 
-                        $output = date("H:i", strtotime($i)) . " - " . date("H:i", strtotime($i) + 3600 * 3 - 1);
+                        $output = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
 
                         echo "<li><label><input type='radio' name='slot' onclick='onClick()' value='{$i}'>{$output}</label></li>";
 
