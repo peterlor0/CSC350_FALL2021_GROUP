@@ -45,7 +45,7 @@ button:active,input[type="submit"]:active{
 input[type="text"],input[type="password"]{
     background-color: rgb(65, 65, 65);
     color:whitesmoke;
-    border-width: 0px 0px 2px 0px;
+    border-width: 0px 0px 3px 0px;
     border-color:cornflowerblue;
     border-style: solid;
     transition: all 0.2s;
