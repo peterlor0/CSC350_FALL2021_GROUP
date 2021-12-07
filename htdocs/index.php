@@ -16,7 +16,10 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
 <body>
 
     <?php
-    
+    session_start();
+    if(isset($_SESSION['username'])){
+        redirectPageTo("/main page/main.php");
+    }
 
     if (isset($_POST['username'])) {
         $conn = startSQLConnect();
@@ -47,7 +50,6 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
         $conn->close();
 
         if ($flag) {
-            session_start();
             $_SESSION['username'] = $_POST['username'];
 
             redirectPageTo("/main page/main.php");
