@@ -53,8 +53,6 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
     }
     ?>
 
-    <iframe style="display: block; margin: auto;" width="600" height="400" src="https://www.youtube.com/embed/1kkiPbIkro0?&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
     <form method="post">
         <table class="center">
             <tr>
