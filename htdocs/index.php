@@ -55,34 +55,35 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
 
     <iframe style="display: block; margin: auto;" width="600" height="400" src="https://www.youtube.com/embed/1kkiPbIkro0?&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    <table class="center">
-        <tr>
-            <td>
-                <label>Username:</label>
-            </td>
-            <td>
-                <input type="text" name="username" required>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label>Password:</label>
-            </td>
-            <td>
-                <input type="password" name="password" required>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="submit" value="Signin" style="width: 100%;">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                Don't have an account? <a href="./Signup Page/signup.html">Signup</a> now
-            </td>
-        </tr>
-    </table>
+    <form method="post">
+        <table class="center">
+            <tr>
+                <td>
+                    <label>Username:</label>
+                </td>
+                <td>
+                    <input type="text" name="username" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Password:</label>
+                </td>
+                <td>
+                    <input type="password" name="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Signin" style="width: 100%;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Don't have an account? <a href="./Signup Page/signup.html">Signup</a> now
+                </td>
+            </tr>
+        </table>
     </form>
 </body>
 
