@@ -53,35 +53,34 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
     }
     ?>
 
-    <form method="post">
-        <table class="center">
-            <tr>
-                <td>
-                    <label>Username:</label>
-                </td>
-                <td>
-                    <input type="text" name="username" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Password:</label>
-                </td>
-                <td>
-                    <input type="password" name="password" required>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="Signin" style="width: 100%;">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    Don't have an account? <a href="./Signup Page/signup.html">Signup</a> now
-                </td>
-            </tr>
-        </table>
+    <table class="center">
+        <tr>
+            <td>
+                <label>Username:</label>
+            </td>
+            <td>
+                <input type="text" name="username" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Password:</label>
+            </td>
+            <td>
+                <input type="password" name="password" required>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Signin" style="width: 100%;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Don't have an account? <a href="./Signup Page/signup.html">Signup</a> now
+            </td>
+        </tr>
+    </table>
     </form>
 </body>
 

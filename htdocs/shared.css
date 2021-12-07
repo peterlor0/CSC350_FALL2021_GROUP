@@ -14,7 +14,11 @@ a{
 }
 
 a:hover{
-    color: rgb(17, 255, 17)
+    color: rgb(17, 255, 17);
+}
+
+a:active{
+    color: rgb(0, 202, 0);
 }
 
 ul{
@@ -23,7 +27,7 @@ ul{
 
 button,input[type="submit"]{
     border-width: 0px;
-    background-color: rgb(0, 123, 255);
+    background-color: rgb(0, 105, 217);
     color: whitesmoke;
     border-radius: 4px;
     transition: all 0.3s;
@@ -31,7 +35,7 @@ button,input[type="submit"]{
 }
 
 button:hover,input[type="submit"]:hover{
-    background-color: rgb(0, 105, 217);
+    background-color: rgb(0, 123, 255);
 }
 
 button:active,input[type="submit"]:active{
