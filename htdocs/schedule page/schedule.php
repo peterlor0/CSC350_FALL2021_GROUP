@@ -8,6 +8,7 @@
     <title></title>
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="schedule.css">
+    <script src="./schedule.js"></script>
 </head>
 
 <body>
@@ -58,16 +59,16 @@
 
                         $output = date("H:i", strtotime($i)) . " - " . date("H:i", strtotime($i) + 3600 * 3 - 1);
 
-                        echo "<li><label><input type='radio' name='slot' value='{$i}'>{$output}</label></li>";
+                        echo "<li><label><input type='radio' name='slot' onclick='onClick()' value='{$i}'>{$output}</label></li>";
 
                         $day = $day2;
                     }
 
                     ?>
                 </ul>
-                
+
             </div>
-            <p><input type="submit" value="Submit"></p>
+            <p><input id="submit" type="submit" value="Submit" disabled></p>
         </form>
 
         <p><a href="../main page/main.php"><button>Ok, I Give Up</button></a></p>
