@@ -200,9 +200,29 @@ function diffDateTimeList($a, $b)
     return $arr4;
 }
 
+/** Check if the user already schedule THIS week
+ *  @return bool
+ */
 function isUserAlreadyScheduleThisWeek($conn, $username)
 {
     $date = getDateTimeRangeOfThisWeekSchedule();
+
+    $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$username}'";
+    $query = $conn->query($sql);
+
+    if ($query && $query->num_rows > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/** Check if the user already schedule NEXT week
+ *  @return bool
+ */
+function isUserAlreadyScheduleNextWeek($conn, $username)
+{
+    $date = getDateTimeRangeOfNextWeekSchedule();
 
     $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$username}'";
     $query = $conn->query($sql);
