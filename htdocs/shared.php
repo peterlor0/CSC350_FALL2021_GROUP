@@ -91,7 +91,8 @@ function getDateTimeRangeOfNextWeekSchedule()
  */
 function isAvailableForNextWeekSchedule()
 {
-    if(time() >= strtotime("this week + 6 day")){
+    //"this week + 6 day" is Sunday
+    if(time() >= strtotime("this week")){
         return true;
     }else{
         return false;
