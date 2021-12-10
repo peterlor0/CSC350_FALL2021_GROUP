@@ -15,6 +15,10 @@ function startSQLConnect()
     // Create connection
     $conn = mysqli_connect($servername, $username, $password);
 
+    if ($conn == false || $conn->connect_error) {
+        die("Connection failed");
+    }
+
     return $conn;
 }
 
@@ -92,9 +96,9 @@ function getDateTimeRangeOfNextWeekSchedule()
 function isAvailableForNextWeekSchedule()
 {
     //"this week + 6 day" is Sunday
-    if(time() >= strtotime("this week")){
+    if (time() >= strtotime("this week")) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }

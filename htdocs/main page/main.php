@@ -15,6 +15,7 @@
     checkLoginState();
 
     $conn = startSQLConnect();
+
     $sql = "SELECT * FROM mgr.userdata WHERE Username='{$_SESSION['username']}'";
     $query = $conn->query($sql);
     $row = mysqli_fetch_row($query);

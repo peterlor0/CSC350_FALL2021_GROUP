@@ -26,9 +26,9 @@
         //this week
         $date = getDateTimeRangeOfThisWeekSchedule();
 
-        if(isUserAlreadyScheduleThisWeek($conn, $_SESSION['username'])){
+        if (isUserAlreadyScheduleThisWeek($conn, $_SESSION['username'])) {
             $flag = false;
-        }else{
+        } else {
             $fullSlotsList = generateSlotsByRange(getNextSlotDateTime(), $date['end']);
         }
     } else if ($_GET['thisweek'] == "0") {
@@ -37,7 +37,7 @@
             $flag = false;
         }
 
-        if(isUserAlreadyScheduleNextWeek($conn, $_SESSION['username'])){
+        if (isUserAlreadyScheduleNextWeek($conn, $_SESSION['username'])) {
             $flag = false;
         }
 
