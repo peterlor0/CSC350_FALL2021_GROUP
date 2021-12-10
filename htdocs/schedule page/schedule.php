@@ -81,6 +81,11 @@
                 </ul>
 
             </div>
+
+            <?php
+            $size = count($slotsAvailable);
+            echo "<p>Available Slots: {$size}</p>";
+            ?>
             <p>Your Selection: <span id="selection" class="selection">None</span></p>
             <p>
                 <a href="../main page/main.php"><button type="button">Ok, I Give Up</button></a>
