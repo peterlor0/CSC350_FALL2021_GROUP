@@ -66,4 +66,14 @@ input[type="text"]:focus,input[type="password"]:focus{
     border-color:rgb(45, 203, 255);
     background-color: rgb(92, 92, 92);
 }
-
+nav{
+    background-color: white;
+    width: 90%;
+    margin-left: auto 0;
+    margin-right: auto 0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 2);
+    padding :20px 40px;
+    display :flex;
+    justify-content:space-around;
+}

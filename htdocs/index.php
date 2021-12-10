@@ -14,7 +14,10 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
 </head>
 
 <body>
-
+<nav>
+            <a href="Signup Page/signup.html">Sign Up</a>
+            <a href="index.php">Sign In</a>
+        </nav>
     <?php
     session_start();
     if(isset($_SESSION['username'])){
