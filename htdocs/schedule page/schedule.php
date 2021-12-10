@@ -25,10 +25,19 @@
     if ($_GET['thisweek'] == "1") {
         //this week
         $date = getDateTimeRangeOfThisWeekSchedule();
-        $fullSlotsList = generateSlotsByRange(getNextSlotDateTime(), $date['end']);
+
+        if(isUserAlreadyScheduleThisWeek($conn, $_SESSION['username'])){
+            $flag = false;
+        }else{
+            $fullSlotsList = generateSlotsByRange(getNextSlotDateTime(), $date['end']);
+        }
     } else if ($_GET['thisweek'] == "0") {
         //next week
         if (!isAvailableForNextWeekSchedule()) {
+            $flag = false;
+        }
+
+        if(isUserAlreadyScheduleNextWeek($conn, $_SESSION['username'])){
             $flag = false;
         }
 
@@ -95,9 +104,9 @@
 
     <?php
     } else {
-        echo "args error<br>";
+        echo "error<br>";
     ?>
-        <a href="../main page/main.php"><button type="button">Continue</button></a>
+        <p><a href="../main page/main.php"><button type="button">Continue</button></a></p>
     <?php
     }
 
