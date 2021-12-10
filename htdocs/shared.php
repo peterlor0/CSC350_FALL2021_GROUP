@@ -10,12 +10,12 @@ function startSQLConnect()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "root1";
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password);
 
-    if ($conn == false || $conn->connect_error) {
+    if ($conn === false) {
         die("Connection failed");
     }
 

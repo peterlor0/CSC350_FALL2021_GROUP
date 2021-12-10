@@ -52,7 +52,7 @@
             if ($conn->query($sql) === TRUE) {
                 echo "Succeeded<br>";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Error<br>";
             }
 
             $conn->close();
