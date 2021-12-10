@@ -74,8 +74,8 @@
         </div>
         <p>Your Selection: <span id="selection" class="selection">None</span></p>
         <p>
-            <input id="submit" type="submit" value="Submit" disabled>
             <a href="../main page/main.php"><button type="button">Ok, I Give Up</button></a>
+            <input id="submit" type="submit" value="Submit" disabled>
         </p>
     </form>
 
