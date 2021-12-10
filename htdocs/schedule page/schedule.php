@@ -19,7 +19,7 @@
     $conn = startSQLConnect();
 
     //check if user has scheduled
-    if (isUserScheduleThisWeek($conn, $_SESSION['username'])) {
+    if (isUserAlreadyScheduleThisWeek($conn, $_SESSION['username'])) {
         redirectPageTo("/main page/main.php");
     } else {
         echo "<h1>Username: {$_SESSION['username']}</h1>";

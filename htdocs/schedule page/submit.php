@@ -22,7 +22,7 @@
         VALUES ('{$_POST['slot']}', '{$_SESSION['username']}')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Successd <br>";
+            echo "Succeeded<br>";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }

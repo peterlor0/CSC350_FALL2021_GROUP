@@ -49,10 +49,11 @@ function getDateOfThisMonday()
     return date("Y-m-d", strtotime("this week")) . " 00:00:00";
 }
 
-/** Monday 0:00 to next Monday 0:00
+/** This Monday 0:00 to next Monday 0:00
  * @return array arr['start'] / arr['end']
  */
-function getDateTimeRangeOfThisWeekSchedule(){
+function getDateTimeRangeOfThisWeekSchedule()
+{
     $start = getDateOfThisMonday();
     $end = date("Y-m-d", strtotime("this week + 7 day")) . " 00:00:00";
 
@@ -64,6 +65,37 @@ function getDateTimeRangeOfThisWeekSchedule(){
     //var_dump($arr);
 
     return $arr;
+}
+
+/** Next Monday 0:00 to Monday 0:00 of the week after next week
+ * @return array arr['start'] / arr['end']
+ */
+function getDateTimeRangeOfNextWeekSchedule()
+{
+    $start = date("Y-m-d", strtotime("this week + 7 day")) . " 00:00:00";
+    $end = date("Y-m-d", strtotime("this week + 14 day")) . " 00:00:00";
+
+    $arr = array(
+        "start" => $start,
+        "end"   => $end
+    );
+
+    //var_dump($arr);
+
+    return $arr;
+}
+
+
+/** Check if next week schedule available
+ * @return bool
+ */
+function isAvailableForNextWeekSchedule()
+{
+    if(time() >= strtotime("this week + 6 day")){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 /** Check if a time in a specific range
@@ -130,7 +162,7 @@ function generateSlotsByRange($_start, $_end)
     $arr = array();
 
     for ($i = $start; $i < $end; $i += $threeHours) {
-        array_push($arr,date("Y-m-d H:i:s", $i));
+        array_push($arr, date("Y-m-d H:i:s", $i));
     }
 
     //var_dump($arr);
@@ -143,38 +175,40 @@ function generateSlotsByRange($_start, $_end)
  * @param array b  datetime list2
  * @return array  list of diff datetime list
  */
-function diffDateTimeList($a, $b){
+function diffDateTimeList($a, $b)
+{
     $arr1 = array();
     $arr2 = array();
 
-    foreach($a as &$i){
+    foreach ($a as &$i) {
         array_push($arr1, strtotime($i));
     }
 
-    foreach($b as &$i){
+    foreach ($b as &$i) {
         array_push($arr2, strtotime($i));
     }
 
     $arr3 = array_diff($arr1, $arr2);
 
-    $arr4=array();
+    $arr4 = array();
 
-    foreach($arr3 as &$i){
+    foreach ($arr3 as &$i) {
         array_push($arr4, date("Y-m-d H:i:s", $i));
     }
 
     return $arr4;
 }
 
-function isUserScheduleThisWeek($conn, $username){
+function isUserAlreadyScheduleThisWeek($conn, $username)
+{
     $date = getDateTimeRangeOfThisWeekSchedule();
 
     $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$username}'";
     $query = $conn->query($sql);
 
-    if($query && $query->num_rows > 0){
+    if ($query && $query->num_rows > 0) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
