@@ -14,13 +14,13 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
 </head>
 
 <body>
-<nav>
-            <a href="Signup Page/signup.html">Sign Up</a>
-            <a href="index.php">Sign In</a>
-        </nav>
+    <nav>
+        <a href="Signup Page/signup.html">Sign Up</a>
+        <a href="index.php">Sign In</a>
+    </nav>
     <?php
     session_start();
-    if(isset($_SESSION['username'])){
+    if (isset($_SESSION['username'])) {
         redirectPageTo("/main page/main.php");
     }
 
@@ -64,7 +64,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
         <table class="center">
             <tr>
                 <td>
-                <ion-icon name="people-outline"></ion-icon>
+                    <ion-icon name="people-outline"></ion-icon>
                     <label>Username:</label>
                 </td>
                 <td>
@@ -73,7 +73,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
             </tr>
             <tr>
                 <td>
-                <ion-icon name="lock-closed-outline"></ion-icon>
+                    <ion-icon name="lock-closed-outline"></ion-icon>
                     <label>Password:</label>
                 </td>
                 <td>
@@ -93,7 +93,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
         </table>
     </form>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

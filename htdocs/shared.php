@@ -69,7 +69,7 @@ function getDateTimeRangeOfThisWeekSchedule(){
 /** Check if a time in a specific range
  *  @param string $target datetime to be checked
  *  @param string $start  starting time (inclusive)
- *  @param string $end    ending time (inclusive)
+ *  @param string $end    ending time (exclusive)
  *  @return bool  True if in range, otherwise false.
  */
 function isDateTimeInRange($target, $start, $end)
@@ -79,7 +79,7 @@ function isDateTimeInRange($target, $start, $end)
     $t_end = strtotime($end);
 
     if ($t_target && $t_start && $t_end) {
-        if ($t_target >= $t_start && $t_target <= $t_end) {
+        if ($t_target >= $t_start && $t_target < $t_end) {
             //echo "true" . "<br>";
             return true;
         }
