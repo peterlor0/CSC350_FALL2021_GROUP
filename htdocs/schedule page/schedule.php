@@ -27,12 +27,12 @@
 
     echo "<nav>";
 
-    echo "<div>";
+    echo "<div title='Username'>";
     echo "<ion-icon name='people-outline'></ion-icon>";
     echo "<span>{$_SESSION['username']}</span>";
     echo "</div>";
 
-    echo "<div>";
+    echo "<div title='Room Number'>";
     echo "<ion-icon name='bed-outline'></ion-icon>";
     echo "<span>{$row[2]}</span>";
     echo "</div>";

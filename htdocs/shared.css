@@ -10,7 +10,6 @@ body{
 }
 
 .right{
-    text-align: right;
     float: right;
 }
 
@@ -74,8 +73,8 @@ input[type="text"]:focus,input[type="password"]:focus{
 }
 
 nav{
-    background-color:rgb(73, 73, 73);
-    border-radius: 0 0 8px 8px;
+    background-color:rgb(92, 92, 92);
+    border-radius: 0 0 16px 16px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
     padding :20px 40px;
     position: sticky;
@@ -90,9 +89,13 @@ nav div{
     margin-right: 32px;
     margin-left: 8px;
     display: inline-block;
+    user-select: none;
 }
 
 nav div span{
     margin-left: 8px;
-    display: inline-block;
+}
+
+ion-icon{
+    pointer-events: none;
 }
