@@ -1,7 +1,10 @@
-h1{
+body{
     text-align: center;
 }
 
+table{
+    text-align: justify;
+}
 
 td{
     padding-top: 10px;

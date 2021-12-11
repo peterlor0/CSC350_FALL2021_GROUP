@@ -83,7 +83,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    Don't have an account? <a href="./signup page/signup.html">Signup</a> now
+                    Don't have an account? <a href="./signup page/signup.php">Signup</a> now
                 </td>
             </tr>
         </table>
