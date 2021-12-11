@@ -92,10 +92,9 @@ nav div{
     user-select: none;
 }
 
-nav div span{
-    margin-left: 8px;
-}
-
 ion-icon{
     pointer-events: none;
+    font-size: 24px;
+    vertical-align:middle;
+    margin-right: 4px;
 }

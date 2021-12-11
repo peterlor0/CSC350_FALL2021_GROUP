@@ -24,21 +24,7 @@
     $query = $conn->query($sql);
     $row = mysqli_fetch_row($query);
 
-    echo "<nav>";
-
-    echo "<div title='Username'>";
-    echo "<ion-icon name='people-outline'></ion-icon>";
-    echo "<span>{$_SESSION['username']}</span>";
-    echo "</div>";
-
-    echo "<div title='Room Number'>";
-    echo "<ion-icon name='bed-outline'></ion-icon>";
-    echo "<span>{$row[2]}</span>";
-    echo "</div>";
-
-    echo "<div class='right'><a href='/logout.php'>Logout</a></div>";
-
-    echo "</nav>";
+    echoNavBar($_SESSION['username'], $row[2]);
 
     //this week
 
@@ -55,10 +41,16 @@
         $ret = mysqli_fetch_assoc($query);
         $tm = strtotime($ret['Date']);
 
-        echo "Your schedule: " . date("Y-m-d, l, h:i A", $tm) . " - " . date("h:i A", $tm + 3600 * 3 - 1) . "<br>";
+        echo "<ion-icon name='time-outline'></ion-icon>Your schedule: " . date("Y-m-d, l, h:i A", $tm) . " - " . date("h:i A", $tm + 3600 * 3 - 1) . "<br>";
     } else {
     ?>
-        <a href="../schedule page/schedule.php?thisweek=1">Schedule...</a><br><br>
+        <p>
+            <a href="../schedule page/schedule.php?thisweek=1">
+                <ion-icon name="time-outline"></ion-icon>
+                Schedule...
+            </a>
+        </p>
+
         <?php
     }
 
@@ -77,10 +69,15 @@
             $ret = mysqli_fetch_assoc($query);
             $tm = strtotime($ret['Date']);
 
-            echo "Your schedule: " . date("Y-m-d, l, h:i A", $tm) . " - " . date("h:i A", $tm + 3600 * 3 - 1) . "<br>";
+            echo "<ion-icon name='time-outline'></ion-icon>Your schedule: " . date("Y-m-d, l, h:i A", $tm) . " - " . date("h:i A", $tm + 3600 * 3 - 1) . "<br>";
         } else {
         ?>
-            <a href="../schedule page/schedule.php?thisweek=0">Schedule...</a><br><br>
+            <p>
+                <a href="../schedule page/schedule.php?thisweek=0">
+                    <ion-icon name="time-outline"></ion-icon>
+                    Schedule...
+                </a>
+            </p>
     <?php
         }
     }

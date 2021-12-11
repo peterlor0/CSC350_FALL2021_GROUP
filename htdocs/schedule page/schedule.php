@@ -25,21 +25,7 @@
     $query = $conn->query($sql);
     $row = mysqli_fetch_row($query);
 
-    echo "<nav>";
-
-    echo "<div title='Username'>";
-    echo "<ion-icon name='people-outline'></ion-icon>";
-    echo "<span>{$_SESSION['username']}</span>";
-    echo "</div>";
-
-    echo "<div title='Room Number'>";
-    echo "<ion-icon name='bed-outline'></ion-icon>";
-    echo "<span>{$row[2]}</span>";
-    echo "</div>";
-
-    echo "<div class='right'><a href='/logout.php'>Logout</a></div>";
-
-    echo "</nav>";
+    echoNavBar($_SESSION['username'], $row[2]);
 
     $flag = true;
 

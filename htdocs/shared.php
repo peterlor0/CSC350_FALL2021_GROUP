@@ -238,6 +238,35 @@ function isUserAlreadyScheduleNextWeek($conn, $username)
     }
 }
 
+/** Show Navigation Bar
+ *  @param string username Username
+ *  @param string roomnum  Room Number
+ *  @return none
+ */
+function echoNavBar($username, $roomnum)
+{
+    echo "<nav>";
+
+    echo "<div title='Username'>
+        <ion-icon name='person-circle-outline'></ion-icon>
+        <span>{$username}</span>
+    </div>";
+
+    echo "<div title='Room Number'>
+        <ion-icon name='bed-outline'></ion-icon>
+        <span>{$roomnum}</span>
+    </div>";
+
+    echo "<div class='right'>
+    <a href='/logout.php'>
+        <ion-icon name='log-out-outline'></ion-icon>
+        Logout
+    </a>
+    </div>";
+
+    echo "</nav>";
+}
+
 ?>
 
 <?php  ?>

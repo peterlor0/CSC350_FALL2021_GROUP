@@ -60,7 +60,7 @@
         <table class="center">
             <tr>
                 <td>
-                    <ion-icon name="people-outline"></ion-icon>
+                    <ion-icon name="person-outline"></ion-icon>
                     <label>Username:</label>
                 </td>
                 <td>
@@ -78,7 +78,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="Signin" style="width: 100%;">
+                    <input type="submit" value="Login" style="width: 100%;">
                 </td>
             </tr>
             <tr>
