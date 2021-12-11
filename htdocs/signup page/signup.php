@@ -32,7 +32,6 @@
             echo "<p>User Created</p><br>";
             echo "<a href='../index.php'>Continue to login</a>";
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
     ?>
             <p class="err">Could not create account</p>
             <form method="post">
