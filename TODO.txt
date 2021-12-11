@@ -1,6 +1,2 @@
 AFTER DEBUGING MUST MODIFY:
-1. password length check
-2. schedule for next week abailability check
-
-TODO:
-1. username check
+schedule for next week abailability check

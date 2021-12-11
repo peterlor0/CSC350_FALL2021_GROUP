@@ -90,7 +90,7 @@ function getDateTimeRangeOfNextWeekSchedule()
 }
 
 
-/** Check if next week schedule available
+/** Check if next week schedule is available
  * @return bool
  */
 function isAvailableForNextWeekSchedule()
