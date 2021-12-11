@@ -8,6 +8,7 @@
     <title></title>
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="schedule.css">
+    
     <script src="./schedule.js"></script>
 </head>
 

@@ -7,6 +7,7 @@
 <head>
     <title></title>
     <link rel="stylesheet" href="/shared.css">
+    <link rel="stylesheet" href="./submit.css">
 </head>
 
 <body>
