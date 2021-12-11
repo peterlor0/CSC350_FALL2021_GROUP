@@ -8,7 +8,7 @@
     <title></title>
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="schedule.css">
-    
+
     <script src="./schedule.js"></script>
 </head>
 
@@ -73,14 +73,17 @@
 
                     foreach ($slotsAvailable as &$i) {
                         $day2 = date("d", strtotime($i));
-                        
+
                         //$i, datetime
                         //$tmp, date and day of week, for display
                         //$tmp2, time only, for display
                         //$tmp3, date and time, for display
 
                         if ($day != $day2) {
-                            echo "<hr>";
+                            if ($day) {
+                                echo "<hr>";
+                            }
+
                             $tmp = date("Y-m-d, l", strtotime($i));
                             echo "<p class='dateTitle'>{$tmp}</p>";
                         }
