@@ -253,7 +253,7 @@ function echoNavBar($username, $roomnum)
     </div>";
 
     echo "<div title='Room Number'>
-        <ion-icon name='bed-outline'></ion-icon>
+        <ion-icon name='home-outline'></ion-icon>
         <span>{$roomnum}</span>
     </div>";
 
