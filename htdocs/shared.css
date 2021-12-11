@@ -13,6 +13,11 @@ body{
     float: right;
 }
 
+.err{
+    color: red;
+    text-align: center;
+}
+
 a{
     color:rgb(0, 224, 0);
     transition: all 0.2s;

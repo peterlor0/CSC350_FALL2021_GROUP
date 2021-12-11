@@ -34,9 +34,55 @@
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
     ?>
-            <p>Could not create account</p>
-            <p><a href='./signup.php'>Retry</a></p>
-            <p><a href="/index.php">Back To Main Page</a></p>
+            <p class="err">Could not create account</p>
+            <form method="post">
+                <table class="center">
+                    <tr>
+                        <td>
+                            <ion-icon name="person-outline"></ion-icon>
+                            <label>Username:</label>
+                        </td>
+                        <td>
+                            <?php
+                            echo "<input id='username' type='text' name='username' value='{$_POST['username']}' required>";
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                            <label>Password:</label>
+                        </td>
+                        <td>
+                            <input id="password" type="password" name="password" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ion-icon name="home-outline"></ion-icon>
+                            <label>Room:</label>
+                        </td>
+                        <td>
+                            <?php
+                            echo "<input id='roomnum' type='text' name='roomnum' value='{$_POST['roomnum']}' required>";
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" onclick="return submitCheck()" value="Submit" style="width: 100%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a href="../index.php">
+                                <ion-icon name="chevron-back-outline"></ion-icon>Back
+                            </a>
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
         <?php
         }
 
