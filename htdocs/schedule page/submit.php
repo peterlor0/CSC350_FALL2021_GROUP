@@ -52,7 +52,7 @@
             if ($conn->query($sql) === TRUE) {
                 echo "Succeeded<br>";
             } else {
-                echo "Error<br>";
+                echo "Error: Other user selected this slot already. Please select another one instead.<br>";
             }
 
             $conn->close();
