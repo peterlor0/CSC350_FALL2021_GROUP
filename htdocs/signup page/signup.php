@@ -20,10 +20,6 @@
     <?php
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['roomnum'])) {
         $conn = startSQLConnect();
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
 
         $sql = "INSERT INTO mgr.userdata (Username, Password, RoomNum)
         VALUES ('{$_POST['username']}', '{$_POST['password']}', '{$_POST['roomnum']}')";
