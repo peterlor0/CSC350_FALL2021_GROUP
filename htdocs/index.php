@@ -14,11 +14,6 @@
 </head>
 
 <body>
-    <nav>
-        <a href="signup page/signup.html">Sign Up</a>
-        <a href="index.php">Sign In</a>
-    </nav>
-    
     <?php
     session_start();
     if (isset($_SESSION['username'])) {

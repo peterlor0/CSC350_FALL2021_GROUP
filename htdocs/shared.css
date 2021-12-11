@@ -2,6 +2,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color:whitesmoke;
     background-color: rgb(68, 68, 68);
+    margin: 0px;
 }
 
 .center{
@@ -66,14 +67,15 @@ input[type="text"]:focus,input[type="password"]:focus{
     border-color:rgb(45, 203, 255);
     background-color: rgb(92, 92, 92);
 }
+
 nav{
-    background-color: white;
-    width: 90%;
-    margin-left: auto 0;
-    margin-right: auto 0;
+    background-color:rgb(73, 73, 73);
     border-radius: 0 0 50px 50px;
-    box-shadow: 3px 3px 20px rgba(0, 0, 0, 2);
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
     padding :20px 40px;
-    display :flex;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
     justify-content:space-around;
+    margin-bottom: 16px;
 }

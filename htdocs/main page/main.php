@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 
-<body style="text-align: center;">
+<body>
     <?php
     session_start();
     checkLoginState();
