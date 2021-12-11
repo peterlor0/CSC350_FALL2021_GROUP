@@ -9,6 +9,11 @@ body{
     margin: auto;
 }
 
+.right{
+    text-align: right;
+    float: right;
+}
+
 a{
     color:rgb(0, 224, 0);
     transition: all 0.2s;
@@ -70,12 +75,24 @@ input[type="text"]:focus,input[type="password"]:focus{
 
 nav{
     background-color:rgb(73, 73, 73);
-    border-radius: 0 0 50px 50px;
+    border-radius: 0 0 8px 8px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.7);
     padding :20px 40px;
     position: sticky;
     top: 0px;
     z-index: 1;
-    justify-content:space-around;
-    margin-bottom: 16px;
+    justify-content: space-around;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+nav div{
+    margin-right: 32px;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+nav div span{
+    margin-left: 8px;
+    display: inline-block;
 }

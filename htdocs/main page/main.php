@@ -8,6 +8,9 @@
     <title></title>
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="./main.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -20,9 +23,22 @@
     $sql = "SELECT * FROM mgr.userdata WHERE Username='{$_SESSION['username']}'";
     $query = $conn->query($sql);
     $row = mysqli_fetch_row($query);
-    echo "<h1>Welcome back! {$_SESSION['username']}</h1>";
-    echo "<p>Room Number: {$row[2]}</p>";
 
+    echo "<nav>";
+
+    echo "<div>";
+    echo "<ion-icon name='people-outline'></ion-icon>";
+    echo "<span>{$_SESSION['username']}</span>";
+    echo "</div>";
+
+    echo "<div>";
+    echo "<ion-icon name='bed-outline'></ion-icon>";
+    echo "<span>{$row[2]}</span>";
+    echo "</div>";
+
+    echo "<div class='right'><a href='/logout.php'>Logout</a></div>";
+
+    echo "</nav>";
 
     //this week
 
@@ -69,7 +85,6 @@
         }
     }
 
-    echo "<br><a href='logout.php'>Logout</a><br>";
     $conn->close();
 
     ?>
