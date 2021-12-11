@@ -6,6 +6,10 @@ table{
     text-align: justify;
 }
 
+.err.left{
+    text-align: left;
+}
+
 td{
     padding-top: 10px;
 }

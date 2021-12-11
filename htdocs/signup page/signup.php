@@ -75,6 +75,7 @@
                             ?>
                         </td>
                     </tr>
+
                     <tr>
                         <td style="vertical-align: top;">
                             <ion-icon name="lock-closed-outline"></ion-icon>
@@ -84,6 +85,7 @@
                             <input id="password" type="password" name="password" required>
                         </td>
                     </tr>
+
                     <tr>
                         <td style="vertical-align: top;">
                             <ion-icon name="home-outline"></ion-icon>
@@ -99,11 +101,13 @@
                             ?>
                         </td>
                     </tr>
+
                     <tr>
                         <td colspan="2">
                             <input type="submit" onclick="return submitCheck()" value="Submit" style="width: 100%;">
                         </td>
                     </tr>
+
                     <tr>
                         <td colspan="2">
                             <a href="../index.php">
@@ -117,10 +121,6 @@
         <?php
         }
 
-
-
-
-
         $conn->close();
     } else {
         ?>
@@ -128,37 +128,44 @@
         <form method="post">
             <table class="center">
                 <tr>
-                    <td>
+                    <td style="vertical-align: top;">
                         <ion-icon name="person-outline"></ion-icon>
                         <label>Username:</label>
                     </td>
                     <td>
                         <input id="username" type="text" name="username" required>
+                        <p class="err left" id="username_alert"></p>
                     </td>
                 </tr>
+
                 <tr>
-                    <td>
+                    <td style="vertical-align: top;">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <label>Password:</label>
                     </td>
                     <td>
                         <input id="password" type="password" name="password" required>
+                        <p class="err left" id="password_alert"></p>
                     </td>
                 </tr>
+
                 <tr>
-                    <td>
+                    <td style="vertical-align: top;">
                         <ion-icon name="home-outline"></ion-icon>
                         <label>Room:</label>
                     </td>
                     <td>
                         <input id="roomnum" type="text" name="roomnum" required>
+                        <p class="err left" id="roomnum_alert"></p>
                     </td>
                 </tr>
+
                 <tr>
                     <td colspan="2">
                         <input type="submit" onclick="return submitCheck()" value="Submit" style="width: 100%;">
                     </td>
                 </tr>
+
                 <tr>
                     <td colspan="2">
                         <a href="../index.php">
