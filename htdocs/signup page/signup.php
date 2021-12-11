@@ -21,30 +21,62 @@
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['roomnum'])) {
         $conn = startSQLConnect();
 
-        $sql = "INSERT INTO mgr.userdata (Username, Password, RoomNum)
-        VALUES ('{$_POST['username']}', '{$_POST['password']}', '{$_POST['roomnum']}')";
+        $flag_succeed = false;
 
-        if ($conn->query($sql) === TRUE) {
-            echo "<p>User Created</p><br>";
-            echo "<a href='../index.php'>Continue to login</a>";
+        //check username
+        $sql = "SELECT * FROM mgr.userdata WHERE Username = '{$_POST['username']}'";
+        $query = $conn->query($sql);
+
+        if ($query && $query->num_rows > 0) {
+            $flag_username = false;
         } else {
+            $flag_username = true;
+        }
+
+        //check room num
+        $sql = "SELECT * FROM mgr.userdata WHERE RoomNum = '{$_POST['roomnum']}'";
+        $query = $conn->query($sql);
+
+        if ($query && $query->num_rows > 0) {
+            $flag_roomnum = false;
+        } else {
+            $flag_roomnum = true;
+        }
+
+        if ($flag_username && $flag_roomnum) {
+            $sql = "INSERT INTO mgr.userdata (Username, Password, RoomNum)
+            VALUES ('{$_POST['username']}', '{$_POST['password']}', '{$_POST['roomnum']}')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "<p>Account '{$_POST['username']}' created successfully</p><br>";
+                echo "<a href='../index.php'>Continue to login</a>";
+
+                $flag_succeed = true;
+            }
+        }
+
+        if (!$flag_succeed) {
     ?>
             <p class="err">Could not create account</p>
             <form method="post">
                 <table class="center">
                     <tr>
-                        <td>
+                        <td style="vertical-align: top;">
                             <ion-icon name="person-outline"></ion-icon>
                             <label>Username:</label>
                         </td>
                         <td>
                             <?php
                             echo "<input id='username' type='text' name='username' value='{$_POST['username']}' required>";
+
+                            if (!$flag_username) {
+                                echo "<p class='err'>Username already in use</p>";
+                            }
                             ?>
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="vertical-align: top;">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                             <label>Password:</label>
                         </td>
@@ -53,13 +85,17 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="vertical-align: top;">
                             <ion-icon name="home-outline"></ion-icon>
                             <label>Room:</label>
                         </td>
                         <td>
                             <?php
                             echo "<input id='roomnum' type='text' name='roomnum' value='{$_POST['roomnum']}' required>";
+
+                            if (!$flag_roomnum) {
+                                echo "<p class='err'>Room Number Invalid</p>";
+                            }
                             ?>
                         </td>
                     </tr>
@@ -80,6 +116,10 @@
             </form>
         <?php
         }
+
+
+
+
 
         $conn->close();
     } else {
