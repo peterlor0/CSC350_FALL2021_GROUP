@@ -47,7 +47,7 @@
         <p>
             <a href="../schedule page/schedule.php?thisweek=1">
                 <ion-icon name="calendar-outline"></ion-icon>
-                Schedule...
+                Schedule
             </a>
         </p>
 
@@ -75,7 +75,7 @@
             <p>
                 <a href="../schedule page/schedule.php?thisweek=0">
                     <ion-icon name="calendar-outline"></ion-icon>
-                    Schedule...
+                    Schedule
                 </a>
             </p>
     <?php
