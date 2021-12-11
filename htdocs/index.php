@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
-<?php
-require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
-?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";?>
 
 <html>
 
@@ -11,13 +9,16 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="./index.css">
 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
     <nav>
-        <a href="Signup Page/signup.html">Sign Up</a>
+        <a href="signup page/signup.html">Sign Up</a>
         <a href="index.php">Sign In</a>
     </nav>
+    
     <?php
     session_start();
     if (isset($_SESSION['username'])) {
@@ -87,13 +88,12 @@ require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
             </tr>
             <tr>
                 <td colspan="2">
-                    Don't have an account? <a href="./Signup Page/signup.html">Signup</a> now
+                    Don't have an account? <a href="./signup page/signup.html">Signup</a> now
                 </td>
             </tr>
         </table>
     </form>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
 </body>
 
 </html>
