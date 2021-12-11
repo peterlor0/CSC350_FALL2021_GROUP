@@ -73,6 +73,11 @@
 
                     foreach ($slotsAvailable as &$i) {
                         $day2 = date("d", strtotime($i));
+                        
+                        //$i, datetime
+                        //$tmp, date and day of week, for display
+                        //$tmp2, time only, for display
+                        //$tmp3, date and time, for display
 
                         if ($day != $day2) {
                             echo "<hr>";
@@ -80,9 +85,14 @@
                             echo "<p class='dateTitle'>{$tmp}</p>";
                         }
 
-                        $output = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
+                        $tmp2 = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
+                        $tmp3 = $tmp . ", " . $tmp2;
 
-                        echo "<li><label><input type='radio' name='slot' onclick='onClick(this)' value='{$i}'>{$output}</label></li>";
+                        echo "<li>
+                        <label>
+                        <input type='radio' name='slot' onclick='onClick(this)' data-datetime='{$tmp3}' value='{$i}'>{$tmp2}
+                        </label>
+                        </li>";
 
                         $day = $day2;
                     }
