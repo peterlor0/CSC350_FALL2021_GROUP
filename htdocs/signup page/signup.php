@@ -57,7 +57,7 @@
             <div class="container">
                 <h1>SignUp</h1>
                 <p class="err">Could not create account</p>
-                <form method="post" class="container">
+                <form method="post">
                     <table class="center">
                         <tr>
                             <td style="vertical-align: top;">
