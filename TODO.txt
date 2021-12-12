@@ -1,2 +1,0 @@
-AFTER DEBUGING MUST MODIFY:
-schedule for next week abailability check
