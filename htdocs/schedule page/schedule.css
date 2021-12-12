@@ -36,11 +36,26 @@
 .dateTitle{
     font-size: 20px;
     color:gold;
+    position: sticky;
+    top: 0px;
+    background-color: rgb(83, 83, 83);
+    z-index: 1;
+    padding-bottom: 4px;
 }
 
 .selection{
     color: gold;
 }
+
+.listItem{
+    user-select: none;
+    padding-top: 10px;
+}
+
+.listItem label input[type='radio']{
+    vertical-align: middle;
+}
+
 
 body{
     text-align: center;

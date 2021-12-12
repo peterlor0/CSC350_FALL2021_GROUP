@@ -97,7 +97,7 @@
                         $tmp2 = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
                         $tmp3 = $tmp . ", " . $tmp2;
 
-                        echo "<li>
+                        echo "<li class='listItem'>
                         <label>
                         <input type='radio' name='slot' onclick='onClick(this)' data-datetime='{$tmp3}' value='{$i}'>{$tmp2}
                         </label>

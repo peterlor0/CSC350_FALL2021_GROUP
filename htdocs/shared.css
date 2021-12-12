@@ -104,3 +104,26 @@ ion-icon{
     vertical-align:middle;
     margin-right: 4px;
 }
+
+input[type='radio']{
+    appearance: none;
+    background-color: rgb(110, 110, 110);
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: cornflowerblue;
+    position: relative;
+}
+
+input[type='radio']:checked:after{
+    content: '';
+    background-color:darkturquoise;
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    top: 2px;
+    position: absolute;
+}
