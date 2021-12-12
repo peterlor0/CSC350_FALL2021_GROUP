@@ -2,6 +2,10 @@ body{
     text-align: center;
 }
 
+h2{
+    color: gold;
+}
+
 .container{
     background-color: rgb(83, 83, 83);
     width: fit-content;
