@@ -5,7 +5,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Home</title>
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="./main.css">
 
@@ -35,6 +35,7 @@
     $date1 = date("Y-m-d", strtotime($date['start']) - 1);
     $date2 = date("Y-m-d", strtotime($date['end']) - 1);
 
+    echo "<div class='container'>";
     echo "<h2>This Week ({$date1} - {$date2}):</h2>";
 
     if ($query && $query->num_rows > 0) {
@@ -81,6 +82,8 @@
     <?php
         }
     }
+
+    echo "</div>";
 
     $conn->close();
 

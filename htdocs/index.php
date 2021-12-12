@@ -56,7 +56,7 @@
     }
     ?>
 
-    <form method="post">
+    <form method="post" class="container">
         <table class="center">
             <tr>
                 <td>

@@ -5,7 +5,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Schedule</title>
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="schedule.css">
 

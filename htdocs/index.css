@@ -2,3 +2,12 @@ td{
     padding-top: 10px;
 }
 
+.container{
+    background-color: rgb(83, 83, 83);
+    width: fit-content;
+    margin: auto;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(247, 247, 247, 0.356);
+    margin-top: 160px;
+}
