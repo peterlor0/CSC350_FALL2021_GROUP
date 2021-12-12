@@ -10,7 +10,7 @@ function submitCheck() {
     var flag_roomnum = false;
 
     if (username.includes(' ')) {
-        document.getElementById("username_alert").textContent = "Username cannot includs white space";
+        document.getElementById("username_alert").textContent = "Username cannot includes white space";
     } else {
         flag_username = true;
     }
