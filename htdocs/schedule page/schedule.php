@@ -128,7 +128,7 @@
                     <p>Your Selection: <span id="selection" class="selection">None</span></p>
 
                     <p>
-                        <a href="/main page/main.php"><button type="button">OK, I Give Up</button></a>
+                        <a href="/main page/main.php"><button type="button">Cancel</button></a>
                         <input id="submit" type="submit" value="Submit" disabled>
                     </p>
 

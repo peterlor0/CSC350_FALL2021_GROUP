@@ -7,12 +7,13 @@ h2{
 }
 
 .container{
-    background-color: rgba(63, 63, 63, 0.432);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0 6px 30px rgba(20, 20, 20, 0.363);
+    background-color: rgba(63, 63, 63, 0.507);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
     width: fit-content;
     margin: auto;
     padding: 16px;
     border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(247, 247, 247, 0.356);
 }

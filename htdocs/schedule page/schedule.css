@@ -14,22 +14,23 @@
 
 
 .container{
-    background-color: rgba(63, 63, 63, 0.432);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     padding: 16px;
     border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(247, 247, 247, 0.356);
     margin-top: 20px;
     margin-bottom: 20px;
+
+    box-shadow: 0 6px 30px rgba(20, 20, 20, 0.363);
+    background-color: rgba(63, 63, 63, 0.507);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .slotList{
     background-color:rgba(83, 83, 83, 0.26);
     border-radius: 16px;
-    border-width: 4px;
+    border-width: 2px;
     border-style: solid;
-    border-color: dodgerblue;
+    border-color: rgb(235, 235, 235);
     overflow: auto;
     min-height: 100px;
     max-height: 600px;
@@ -57,9 +58,9 @@
 
 .panel{
     border-style: solid;
-    border-width: 3px;
-    border-color: cornflowerblue;
-    border-radius: 6px;
+    border-width: 2px;
+    border-color: rgb(236, 236, 236);
+    border-radius: 8px;
     margin-top: 6px;
     background-color: rgba(95, 95, 95, 0.267);
     text-align: left;
@@ -68,7 +69,7 @@
 .panelHeader{
     font-size: 20px;
     color:gold;
-    border-radius: 6px 6px 0px 0px;
+    border-radius: 8px 8px 0px 0px;
     background-color: rgba(54, 54, 54, 0.432);
     user-select: none;
     cursor: pointer;
@@ -82,9 +83,6 @@
 }
 
 .panelHeader.active{
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    border-color: dodgerblue;
     color: greenyellow;
 }
 
