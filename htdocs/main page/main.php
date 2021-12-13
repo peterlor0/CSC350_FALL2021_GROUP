@@ -44,15 +44,21 @@
 
         echo "<ion-icon name='time-outline'></ion-icon>Your schedule: " . date("Y-m-d, l, h:i A", $tm) . " - " . date("h:i A", $tm + 3600 * 3 - 1) . "<br>";
     } else {
+        if (time() > strtotime(getDateTimeOfLastSlotOfThisWeek())) {
+            echo "<p>N/A</p>";
+        } else {
+
     ?>
-        <p>
-            <a href="../schedule page/schedule.php?thisweek=1">
-                <ion-icon name="calendar-outline"></ion-icon>
-                Schedule
-            </a>
-        </p>
+            <p>
+                <a href="../schedule page/schedule.php?thisweek=1">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    Schedule
+                </a>
+            </p>
 
         <?php
+
+        }
     }
 
     //next week

@@ -29,7 +29,8 @@
     border-style: solid;
     border-color: dodgerblue;
     overflow: auto;
-    height: 500px;
+    min-height: 100px;
+    max-height: 600px;
     text-align: left;
     padding: 6px 16px 6px 16px;
 }

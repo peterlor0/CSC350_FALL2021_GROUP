@@ -53,6 +53,13 @@ function getDateOfThisMonday()
     return date("Y-m-d", strtotime("this week")) . " 00:00:00";
 }
 
+/** Get the date of the last slot of this week.
+ * @return string datetime
+ */
+function getDateTimeOfLastSlotOfThisWeek(){
+    return date("Y-m-d", strtotime("this week + 6 day")) . " 21:00:00";
+}
+
 /** This Monday 0:00 to next Monday 0:00
  * @return array arr['start'] / arr['end']
  */
