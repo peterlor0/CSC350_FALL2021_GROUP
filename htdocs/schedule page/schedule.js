@@ -3,3 +3,26 @@ function onClick(el) {
 
     document.getElementById("selection").textContent = el.getAttribute("data-datetime");
 }
+
+function onPanelHeaderClick(el) {
+    var els = document.getElementsByClassName("panelHeader");
+
+    if (el.nextElementSibling.style.maxHeight) {
+        el.classList.remove("active");
+        el.nextElementSibling.style.maxHeight = null;
+    } else {
+        for (var i of els) {
+            var s = i.nextElementSibling;
+
+            if (el == i) {
+                i.classList.add("active");
+                s.style.maxHeight = s.scrollHeight + "px";
+            } else {
+                i.classList.remove("active");
+                s.style.maxHeight = null;
+            }
+        }
+    }
+
+
+}

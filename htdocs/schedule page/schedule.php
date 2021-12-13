@@ -67,60 +67,77 @@
         //all slots - already schedule slots = available slots
         $slotsAvailable = diffDateTimeList($fullSlotsList, $slotsAlreadySchedule);
 
+        $day = "";
     ?>
-        <p>
-        <h2>Select a slot:</h2>
-        </p>
-        <form action="./submit.php" method="post">
-            <div class="slotList center">
-                <ul>
-                    <?php
-                    $day = "";
 
-                    foreach ($slotsAvailable as &$i) {
-                        $day2 = date("d", strtotime($i));
+        <div class="outerContainer">
+            <div class="container">
+                <h2>Select a slot</h2>
+                <form action="./submit.php" method="post">
+                    <div class="slotList">
 
-                        //$i, datetime
-                        //$tmp, date and day of week, for display
-                        //$tmp2, time only, for display
-                        //$tmp3, date and time, for display
+                        <?php
+                        foreach ($slotsAvailable as &$i) {
+                            $day2 = date("w", strtotime($i));
 
-                        if ($day != $day2) {
-                            if ($day) {
-                                echo "<hr>";
+                            if ($day2 != $day) {
+                                if ($day != "") {
+                                    echo "</div>
+                                        </div>";
+                                }
+
+                                $tmp = date("Y-m-d, l", strtotime($i));
+
+                                echo "<div class='panel'>
+                                        <div class='panelHeader' 
+                                            onclick='onPanelHeaderClick(this)'>
+                                        {$tmp}
+                                        </div>
+                                    <div class='panelContent'>";
                             }
 
-                            $tmp = date("Y-m-d, l", strtotime($i));
-                            echo "<p class='dateTitle'>{$tmp}</p>";
+                            $day = $day2;
+
+                            $tmp2 = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
+                            $tmp3 = $tmp . ", " . $tmp2;
+
+                            echo "<p class='item'>
+                                    <label>
+                                    <input data-datetime='{$tmp3}' type='radio' name='slot' value='{$i}' onclick='onClick(this)'>
+                                    {$tmp2}
+                                </label>
+                            </p>";
                         }
 
-                        $tmp2 = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
-                        $tmp3 = $tmp . ", " . $tmp2;
+                        if ($day != "") {
+                            echo "</div>
+                                </div>";
+                        }
 
-                        echo "<li class='listItem'>
-                        <label>
-                        <input type='radio' name='slot' onclick='onClick(this)' data-datetime='{$tmp3}' value='{$i}'>{$tmp2}
-                        </label>
-                        </li>";
+                        ?>
 
-                        $day = $day2;
-                    }
+                    </div>
+
+                    <?php
+
+                    $size = count($slotsAvailable);
+                    echo "<p>{$size} slot(s) available</p>"
 
                     ?>
-                </ul>
+
+                    <p>Your Selection: <span id="selection" class="selection">None</span></p>
+
+                    <p>
+                        <a href="/main page/main.php"><button type="button">OK, I Give Up</button></a>
+                        <input id="submit" type="submit" value="Submit" disabled>
+                    </p>
+
+                </form>
 
             </div>
+        </div>
 
-            <?php
-            $size = count($slotsAvailable);
-            echo "<p>Available Slots: {$size}</p>";
-            ?>
-            <p>Your Selection: <span id="selection" class="selection">None</span></p>
-            <p>
-                <a href="../main page/main.php"><button type="button">Ok, I Give Up</button></a>
-                <input id="submit" type="submit" value="Submit" disabled>
-            </p>
-        </form>
+        <script src="./schedule2.js"></script>
 
     <?php
     } else {
