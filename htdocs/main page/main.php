@@ -22,9 +22,9 @@
 
     $sql = "SELECT * FROM mgr.userdata WHERE Username='{$_SESSION['username']}'";
     $query = $conn->query($sql);
-    $row = mysqli_fetch_row($query);
+    $row = mysqli_fetch_assoc($query);
 
-    echoNavBar($_SESSION['username'], $row[2]);
+    echoNavBar($_SESSION['username'], $row['RoomNum']);
 
     //this week
 

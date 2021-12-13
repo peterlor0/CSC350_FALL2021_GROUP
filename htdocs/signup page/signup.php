@@ -71,7 +71,7 @@
                 echo "<p class='err'>Could not create account</p>";
             }
             ?>
-            <form method="post">
+            <form method="post" onsubmit="return submitCheck()">
                 <table class="center">
                     <tr>
                         <td style="vertical-align: top;">
@@ -130,7 +130,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <input type="submit" onclick="return submitCheck()" value="Submit" style="width: 100%;">
+                            <input type="submit" value="Submit" style="width: 100%;">
                         </td>
                     </tr>
 

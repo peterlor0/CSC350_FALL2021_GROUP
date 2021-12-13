@@ -3,6 +3,8 @@ function submitCheck() {
     var passwd = document.getElementById("password").value;
     var roomnum = document.getElementById("roomnum").value;
 
+    roomnum = roomnum.trim().replace("  ", " ");
+
     //return false to cancel submit
 
     var flag_username = false;
@@ -21,9 +23,10 @@ function submitCheck() {
         flag_passwd = true;
     }
 
-    if (roomnum.trim().length == 0) {
+    if (roomnum.length == 0) {
         document.getElementById("roomnum_alert").textContent = "Invalid Room Number";
     } else {
+        document.getElementById("roomnum").value = roomnum;
         flag_roomnum = true;
     }
 
