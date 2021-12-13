@@ -48,7 +48,7 @@
                 ?>
                 <div class="container">
                 <?php
-                echo "<p>Account '{$_POST['username']}' created successfully</p><br>";
+                echo "<p>Account '{$_POST['username']}' Created Successfully</p><br>";
                 echo "<a href='../index.php'>Continue to login</a>";
                 
                 ?>
@@ -76,7 +76,7 @@
                                 echo "<input id='username' type='text' name='username' value='{$_POST['username']}' required>";
 
                                 if (!$flag_username) {
-                                    echo "<p class='err'>Username already in use</p>";
+                                    echo "<p class='err left' id='username_alert'>Username already in use</p>";
                                 }
                                 ?>
                             </td>
@@ -89,6 +89,7 @@
                             </td>
                             <td>
                                 <input id="password" type="password" name="password" required>
+                                <p class="err left" id="password_alert"></p>
                             </td>
                         </tr>
 
@@ -102,7 +103,7 @@
                                 echo "<input id='roomnum' type='text' name='roomnum' value='{$_POST['roomnum']}' required>";
 
                                 if (!$flag_roomnum) {
-                                    echo "<p class='err'>Room Number Invalid</p>";
+                                    echo "<p class='err left' id='roomnum_alert'>Room Number Invalid</p>";
                                 }
                                 ?>
                             </td>

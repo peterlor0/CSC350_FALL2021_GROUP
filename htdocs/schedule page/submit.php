@@ -66,7 +66,10 @@
         VALUES ('{$_POST['slot']}', '{$_SESSION['username']}')";
 
                 if ($conn->query($sql) === TRUE) {
-                    echo "Succeeded<br>";
+                    $tmp = date("M d, Y, l, h:i A", strtotime($_POST['slot'])) . " - " . date("h:i A", strtotime($_POST['slot']) + 3600 * 3 - 1);
+
+                    echo "<p>Succeeded</p>";
+                    echo "<p>Your Schedule: {$tmp} </p>";
                 } else {
                     echo "Error: Other user selected this slot already. Please select another one instead.<br>";
                 }
@@ -78,7 +81,7 @@
 
             <a href="../main page/main.php">Continue</a>
         </div>
-        
+
     <?php
     } else {
         redirectPageTo("/main page/main.php");

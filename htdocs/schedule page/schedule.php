@@ -80,13 +80,15 @@
                         foreach ($slotsAvailable as &$i) {
                             $day2 = date("w", strtotime($i));
 
+                            //$tmp,$tmp2,$tmp3 only for display
+
                             if ($day2 != $day) {
                                 if ($day != "") {
                                     echo "</div>
                                         </div>";
                                 }
 
-                                $tmp = date("Y-m-d, l", strtotime($i));
+                                $tmp = date("M d, Y, l", strtotime($i));
 
                                 echo "<div class='panel'>
                                         <div class='panelHeader' 
