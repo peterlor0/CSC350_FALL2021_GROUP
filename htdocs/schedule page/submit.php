@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <?php
 
     session_start();
@@ -28,52 +29,64 @@
 
         echoNavBar($_SESSION['username'], $row[2]);
 
-        $dateOfThisWeek = getDateTimeRangeOfThisWeekSchedule();
-        $dateOfNextWeek = getDateTimeRangeOfNextWeekSchedule();
-        $dateOfSelection = $_POST['slot'];
+    ?>
+        <div class="container">
 
-        $flag = false;
+            <?php
 
-        if (isDateTimeInRange($dateOfSelection, getNextSlotDateTime(), $dateOfThisWeek['end'])) {
-            if (isUserAlreadyScheduleThisWeek($conn, $_SESSION['username'])) {
-                echo "error: already scheduled this week<br>";
-            } else {
-                $flag = true;
-            }
-        } else if (isDateTimeInRange($dateOfSelection, $dateOfNextWeek['start'], $dateOfNextWeek['end'])) {
-            if (isAvailableForNextWeekSchedule()) {
-                if (isUserAlreadyScheduleNextWeek($conn, $_SESSION['username'])) {
-                    echo "error: already scheduled next week<br>";
+            $dateOfThisWeek = getDateTimeRangeOfThisWeekSchedule();
+            $dateOfNextWeek = getDateTimeRangeOfNextWeekSchedule();
+            $dateOfSelection = $_POST['slot'];
+
+            $flag = false;
+
+            if (isDateTimeInRange($dateOfSelection, getNextSlotDateTime(), $dateOfThisWeek['end'])) {
+                if (isUserAlreadyScheduleThisWeek($conn, $_SESSION['username'])) {
+                    echo "error: already scheduled this week<br>";
                 } else {
                     $flag = true;
                 }
+            } else if (isDateTimeInRange($dateOfSelection, $dateOfNextWeek['start'], $dateOfNextWeek['end'])) {
+                if (isAvailableForNextWeekSchedule()) {
+                    if (isUserAlreadyScheduleNextWeek($conn, $_SESSION['username'])) {
+                        echo "error: already scheduled next week<br>";
+                    } else {
+                        $flag = true;
+                    }
+                } else {
+                    echo "error: next week schedule not available<br>";
+                }
             } else {
-                echo "error: next week schedule not available<br>";
+                echo "error: selection error<br>";
             }
-        } else {
-            echo "error: selection error<br>";
-        }
 
 
-        if ($flag) {
-            $sql = "INSERT INTO mgr.schedule (Date, Username)
+            if ($flag) {
+                $sql = "INSERT INTO mgr.schedule (Date, Username)
         VALUES ('{$_POST['slot']}', '{$_SESSION['username']}')";
 
-            if ($conn->query($sql) === TRUE) {
-                echo "Succeeded<br>";
-            } else {
-                echo "Error: Other user selected this slot already. Please select another one instead.<br>";
+                if ($conn->query($sql) === TRUE) {
+                    echo "Succeeded<br>";
+                } else {
+                    echo "Error: Other user selected this slot already. Please select another one instead.<br>";
+                }
+
+                $conn->close();
             }
 
-            $conn->close();
-        }
+            ?>
+
+            <a href="../main page/main.php">Continue</a>
+        </div>
+        
+    <?php
     } else {
         redirectPageTo("/main page/main.php");
     }
 
     ?>
 
-    <a href="../main page/main.php">Continue</a>
+
 </body>
 
 </html>
