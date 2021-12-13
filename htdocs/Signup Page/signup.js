@@ -3,7 +3,8 @@ function submitCheck() {
     var passwd = document.getElementById("password").value;
     var roomnum = document.getElementById("roomnum").value;
 
-    roomnum = roomnum.trim().replace("  ", " ");
+    //trim and replace multiple space with single space
+    roomnum = roomnum.trim().replace(/  +/g, " ");
 
     //return false to cancel submit
 
