@@ -68,7 +68,7 @@ input[type="text"],input[type="password"]{
     background-color: transparent;
     color:whitesmoke;
     border-width: 0px 0px 3px 0px;
-    border-color:rgb(0, 157, 248);
+    border-color:rgb(0, 162, 255);
     border-style: solid;
     transition: all 0.2s;
     font-size: 20px;
@@ -76,12 +76,11 @@ input[type="text"],input[type="password"]{
 }
 
 input[type="text"]:hover,input[type="password"]:hover{
-    background-color: rgba(51, 51, 51, 0.253);
+    border-color:rgb(45, 203, 255);
 }
 
 input[type="text"]:focus,input[type="password"]:focus{
     border-color:rgb(45, 203, 255);
-    background-color: rgba(51, 51, 51, 0.253);
 }
 
 nav{
