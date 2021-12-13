@@ -8,11 +8,8 @@ function submitCheck() {
     document.getElementById("password_alert").textContent = "";
     document.getElementById("roomnum_alert").textContent = "";
 
-
     //trim and replace multiple space with single space
     roomnum = roomnum.trim().replace(/  +/g, " ");
-
-    //return false to cancel submit
 
     var flag_username = false;
     var flag_passwd = false;
@@ -37,6 +34,7 @@ function submitCheck() {
         flag_roomnum = true;
     }
 
+    //return false to cancel submit
     return flag_username && flag_passwd && flag_roomnum;
 
 }
