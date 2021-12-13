@@ -5,7 +5,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Login</title>
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="./index.css">
 
