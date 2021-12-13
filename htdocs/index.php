@@ -68,7 +68,13 @@
                         <label>Username:</label>
                     </td>
                     <td>
-                        <input type="text" name="username" required>
+                        <?php
+                        if(isset($_POST['username'])){
+                            echo "<input type='text' name='username' value='{$_POST['username']}' required>";
+                        }else{
+                            echo "<input type='text' name='username' required>";
+                        }
+                        ?>
                     </td>
                 </tr>
                 <tr>
