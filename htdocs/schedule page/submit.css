@@ -3,7 +3,9 @@ body{
 }
 
 .container{
-    background-color: rgb(83, 83, 83);
+    background-color: rgba(63, 63, 63, 0.432);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     width: fit-content;
     margin: auto;
     padding: 16px;
