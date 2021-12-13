@@ -44,6 +44,8 @@
 
         echo "<ion-icon name='time-outline'></ion-icon>Your schedule: " . date("Y-m-d, l, h:i A", $tm) . " - " . date("h:i A", $tm + 3600 * 3 - 1) . "<br>";
     } else {
+
+        //if time passed this last slot and user did not schedule this week, echo "n/a"
         if (time() > strtotime(getDateTimeOfLastSlotOfThisWeek())) {
             echo "<p>N/A</p>";
         } else {
