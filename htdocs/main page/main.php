@@ -32,11 +32,11 @@
     $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$_SESSION['username']}'";
     $query = $conn->query($sql);
 
-    $date1 = date("Y-m-d", strtotime($date['start']) - 1);
-    $date2 = date("Y-m-d", strtotime($date['end']) - 1);
+    $date1 = date("Y-m-d, l", strtotime($date['start']));
+    $date2 = date("Y-m-d, l", strtotime($date['end']) - 1);
 
     echo "<div class='container'>";
-    echo "<h2>This Week ({$date1} - {$date2}):</h2>";
+    echo "<h3 class='date'>This Week ({$date1} - {$date2}):</h3>";
 
     if ($query && $query->num_rows > 0) {
         $ret = mysqli_fetch_assoc($query);
@@ -69,10 +69,10 @@
         $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$_SESSION['username']}'";
         $query = $conn->query($sql);
 
-        $date1 = date("Y-m-d", strtotime($date['start']) - 1);
-        $date2 = date("Y-m-d", strtotime($date['end']) - 1);
+        $date1 = date("Y-m-d, l", strtotime($date['start']));
+        $date2 = date("Y-m-d, l", strtotime($date['end']) - 1);
 
-        echo "<hr><h2>Next Week ({$date1} - {$date2}):</h2>";
+        echo "<hr><h3 class='date'>Next Week ({$date1} - {$date2}):</h3>";
 
         if ($query && $query->num_rows > 0) {
             $ret = mysqli_fetch_assoc($query);
