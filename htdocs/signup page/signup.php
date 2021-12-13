@@ -45,8 +45,15 @@
             VALUES ('{$_POST['username']}', '{$_POST['password']}', '{$_POST['roomnum']}')";
 
             if ($conn->query($sql) === TRUE) {
+                ?>
+                <div class="container">
+                <?php
                 echo "<p>Account '{$_POST['username']}' created successfully</p><br>";
                 echo "<a href='../index.php'>Continue to login</a>";
+                
+                ?>
+                </div>
+                <?php
 
                 $flag_succeed = true;
             }
