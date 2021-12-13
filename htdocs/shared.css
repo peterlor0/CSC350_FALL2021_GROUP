@@ -117,6 +117,9 @@ ion-icon{
 
 input[type='radio']{
     appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
     background-color: rgba(110, 110, 110, 0.459);
     width: 24px;
     height: 24px;
