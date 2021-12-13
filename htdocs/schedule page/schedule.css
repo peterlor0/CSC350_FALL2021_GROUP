@@ -15,8 +15,8 @@
 
 .container{
     background-color: rgba(63, 63, 63, 0.432);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 16px;
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(247, 247, 247, 0.356);

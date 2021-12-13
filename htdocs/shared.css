@@ -4,10 +4,10 @@ body{
     background-color: rgb(54, 54, 54);
     margin: 0px;
 
-    background-image: url("/res/background.png");
+    background-image: url("/res/background.jpg");
 
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
 }
 
 .center{
@@ -20,7 +20,7 @@ body{
 
 
 .err{
-    color: rgb(255, 127, 127);
+    color: rgb(255, 53, 53);
     text-align: center;
 }
 
