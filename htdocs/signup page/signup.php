@@ -120,7 +120,7 @@
                             }
 
                             if (isset($flag_roomnum) && !$flag_roomnum) {
-                                echo "<p class='err left' id='roomnum_alert'>Room Number Invalid</p>";
+                                echo "<p class='err left' id='roomnum_alert'>Room Number already in use</p>";
                             }else{
                                 echo "<p class='err left' id='roomnum_alert'></p>";
                             }

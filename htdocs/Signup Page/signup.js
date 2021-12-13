@@ -3,6 +3,12 @@ function submitCheck() {
     var passwd = document.getElementById("password").value;
     var roomnum = document.getElementById("roomnum").value;
 
+    //reset alert
+    document.getElementById("username_alert").textContent = "";
+    document.getElementById("password_alert").textContent = "";
+    document.getElementById("roomnum_alert").textContent = "";
+
+
     //trim and replace multiple space with single space
     roomnum = roomnum.trim().replace(/  +/g, " ");
 
