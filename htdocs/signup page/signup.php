@@ -45,96 +45,32 @@
             VALUES ('{$_POST['username']}', '{$_POST['password']}', '{$_POST['roomnum']}')";
 
             if ($conn->query($sql) === TRUE) {
-                ?>
-                <div class="container">
-                <?php
-                echo "<p>Account '{$_POST['username']}' Created Successfully</p><br>";
-                echo "<a href='../index.php'>Continue to login</a>";
-                
-                ?>
-                </div>
-                <?php
-
                 $flag_succeed = true;
             }
         }
 
-        if (!$flag_succeed) {
-    ?>
-            <div class="container">
-                <h1>SignUp</h1>
-                <p class="err">Could not create account</p>
-                <form method="post">
-                    <table class="center">
-                        <tr>
-                            <td style="vertical-align: top;">
-                                <ion-icon name="person-outline"></ion-icon>
-                                <label>Username:</label>
-                            </td>
-                            <td>
-                                <?php
-                                echo "<input id='username' type='text' name='username' value='{$_POST['username']}' required>";
-
-                                if (!$flag_username) {
-                                    echo "<p class='err left' id='username_alert'>Username already in use</p>";
-                                }
-                                ?>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td style="vertical-align: top;">
-                                <ion-icon name="lock-closed-outline"></ion-icon>
-                                <label>Password:</label>
-                            </td>
-                            <td>
-                                <input id="password" type="password" name="password" required>
-                                <p class="err left" id="password_alert"></p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td style="vertical-align: top;">
-                                <ion-icon name="home-outline"></ion-icon>
-                                <label>Room:</label>
-                            </td>
-                            <td>
-                                <?php
-                                echo "<input id='roomnum' type='text' name='roomnum' value='{$_POST['roomnum']}' required>";
-
-                                if (!$flag_roomnum) {
-                                    echo "<p class='err left' id='roomnum_alert'>Room Number Invalid</p>";
-                                }
-                                ?>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2">
-                                <input type="submit" onclick="return submitCheck()" value="Submit" style="width: 100%;">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2">
-                                <a href="../index.php">
-                                    <ion-icon name="chevron-back-outline"></ion-icon>Back
-                                </a>
-                            </td>
-                        </tr>
-
-                    </table>
-                </form>
-            </div>
-        <?php
-        }
-
         $conn->close();
-    } else {
-        ?>
+    }
 
+    if (isset($flag_succeed) && $flag_succeed) {
+    ?>
+        <div class="container">
+            <?php
+            echo "<p>Account '{$_POST['username']}' Created Successfully</p><br>";
+            echo "<a href='../index.php'>Continue to login</a>";
+
+            ?>
+        </div>
+    <?php
+    } else {
+    ?>
         <div class="container">
             <h1>SignUp</h1>
+            <?php
+            if (isset($flag_succeed)) {
+                echo "<p class='err'>Could not create account</p>";
+            }
+            ?>
             <form method="post">
                 <table class="center">
                     <tr>
@@ -143,8 +79,19 @@
                             <label>Username:</label>
                         </td>
                         <td>
-                            <input id="username" type="text" name="username" required>
-                            <p class="err left" id="username_alert"></p>
+                            <?php
+                            if (isset($flag_succeed)) {
+                                echo "<input id='username' type='text' name='username' value='{$_POST['username']}' required>";
+                            } else {
+                                echo "<input id='username' type='text' name='username' required>";
+                            }
+
+                            if (isset($flag_username) && !$flag_username) {
+                                echo "<p class='err left' id='username_alert'>Username already in use</p>";
+                            }else{
+                                echo "<p class='err left' id='username_alert'></p>";
+                            }
+                            ?>
                         </td>
                     </tr>
 
@@ -165,8 +112,19 @@
                             <label>Room:</label>
                         </td>
                         <td>
-                            <input id="roomnum" type="text" name="roomnum" required>
-                            <p class="err left" id="roomnum_alert"></p>
+                            <?php
+                            if (isset($flag_succeed)) {
+                                echo "<input id='roomnum' type='text' name='roomnum' value='{$_POST['roomnum']}' required>";
+                            } else {
+                                echo "<input id='roomnum' type='text' name='roomnum' required>";
+                            }
+
+                            if (isset($flag_roomnum) && !$flag_roomnum) {
+                                echo "<p class='err left' id='roomnum_alert'>Room Number Invalid</p>";
+                            }else{
+                                echo "<p class='err left' id='roomnum_alert'></p>";
+                            }
+                            ?>
                         </td>
                     </tr>
 
@@ -187,13 +145,10 @@
                 </table>
             </form>
         </div>
-
     <?php
-
     }
+
     ?>
-
-
 
 </body>
 
