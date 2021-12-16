@@ -100,6 +100,8 @@
         </form>
     </div>
 
+    <script src="/shared/autoCenter.js"></script>
+
 </body>
 
 </html>

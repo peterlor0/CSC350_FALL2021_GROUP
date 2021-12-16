@@ -88,7 +88,7 @@
 
                             if (isset($flag_username) && !$flag_username) {
                                 echo "<p class='err left' id='username_alert'>Username already in use</p>";
-                            }else{
+                            } else {
                                 echo "<p class='err left' id='username_alert'></p>";
                             }
                             ?>
@@ -121,7 +121,7 @@
 
                             if (isset($flag_roomnum) && !$flag_roomnum) {
                                 echo "<p class='err left' id='roomnum_alert'>Room Number already in use</p>";
-                            }else{
+                            } else {
                                 echo "<p class='err left' id='roomnum_alert'></p>";
                             }
                             ?>
@@ -149,6 +149,8 @@
     }
 
     ?>
+
+    <script src="/shared/autoCenter.js"></script>
 
 </body>
 

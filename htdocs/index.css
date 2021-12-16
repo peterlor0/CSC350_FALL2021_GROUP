@@ -7,7 +7,7 @@ td{
     margin: auto;
     padding: 16px;
     border-radius: 16px;
-    margin-top: 160px;
+    position: relative;
 
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.192),
                 0 15px 30px rgba(0, 0, 0, 0.185),
