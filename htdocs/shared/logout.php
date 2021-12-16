@@ -1,5 +1,5 @@
 <?php
-    require $_SERVER['DOCUMENT_ROOT'] . "/shared.php";
+    require $_SERVER['DOCUMENT_ROOT'] . "/shared/shared.php";
 
     session_start();
     session_unset();

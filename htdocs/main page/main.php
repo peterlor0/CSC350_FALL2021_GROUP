@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared.php" ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared/shared.php" ?>
 
 <html>
 
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="/shared.css">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="/shared/shared.css">
+    <link rel="stylesheet" href="main.css">
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
