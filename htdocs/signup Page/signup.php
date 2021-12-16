@@ -65,7 +65,7 @@
     } else {
     ?>
         <div class="container">
-            <h1>SignUp</h1>
+            <h2>SignUp</h2>
             <?php
             if (isset($flag_succeed)) {
                 echo "<p class='err'>Could not create account</p>";
