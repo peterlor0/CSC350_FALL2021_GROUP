@@ -109,9 +109,6 @@
     line-height: 35px;
     z-index: 1;
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
     top: 0px;
     position: sticky;
     position: -webkit-sticky;
@@ -122,7 +119,7 @@
 }
 
 .panelHeader.active{
-    background-color: rgba(70, 70, 70, 0.733);
+    background-color: rgba(87, 87, 87, 0.733);
 }
 
 .panelHeader.active::before{
