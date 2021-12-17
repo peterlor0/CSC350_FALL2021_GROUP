@@ -72,7 +72,7 @@
             }
             ?>
             <form method="post" onsubmit="return submitCheck()">
-                <table class="center">
+                <table>
                     <tr>
                         <td style="vertical-align: top;">
                             <ion-icon name="person-outline"></ion-icon>

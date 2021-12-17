@@ -5,7 +5,7 @@
 <html>
 
 <head>
-    <title>Login</title>
+    <title>ABC laundry login</title>
     <link rel="stylesheet" href="/shared/shared.css">
     <link rel="stylesheet" href="./index.css">
 
@@ -22,6 +22,7 @@
 
     ?>
     <div class="container">
+        <h2>Welcome to ABC laundry room</h2>
         <?php
 
         if (isset($_POST['username'])) {
