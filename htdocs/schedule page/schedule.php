@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/shared/shared.css">
     <link rel="stylesheet" href="schedule.css">
 
-    <script src="./schedule.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
@@ -70,7 +69,14 @@
         $day = "";
     ?>
         <div class="container">
-            <h2>Select a slot</h2>
+            <?php
+            $tmp = date("M d, Y, l", strtotime($date['start']));
+            $tmp2 = date("M d, Y, l", strtotime($date['end']) - 1);
+            $tmp3 = $_GET['thisweek'] == "1" ? "This Week" : "Next Week";
+
+            echo "<h2>Select A Slot for {$tmp3}</h2>";
+            echo "<h4>({$tmp} - {$tmp2})</h4>";
+            ?>
             <form action="./submit.php" method="post">
                 <div class="slotList">
 
@@ -140,16 +146,16 @@
 
     <?php
     } else {
-        echo "error<br>";
+        echo "<p>Error</p>";
     ?>
-        <p><a href="../main page/main.php"><button type="button">Continue</button></a></p>
+        <p><a href="../main page/main.php"><button type="button">Ok</button></a></p>
     <?php
     }
 
     $conn->close();
 
     ?>
-    <script src="./schedule2.js"></script>
+    <script src="./schedule.js"></script>
 
 </body>
 
