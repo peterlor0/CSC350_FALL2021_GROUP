@@ -81,9 +81,9 @@ input[type="text"]:focus,input[type="password"]:focus{
 }
 
 nav{
-    background-color:rgba(77, 77, 77, 0.637);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(56, 56, 56, 0.281);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
     border-radius: 0 0 8px 8px;
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.432);
