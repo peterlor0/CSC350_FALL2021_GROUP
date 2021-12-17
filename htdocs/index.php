@@ -21,8 +21,12 @@
     }
 
     ?>
+
+    <h1>Welcome to ABC laundry room</h1>
+
+
     <div class="container">
-        <h2>Welcome to ABC laundry room</h2>
+
         <?php
 
         if (isset($_POST['username'])) {
@@ -70,9 +74,9 @@
                     </td>
                     <td>
                         <?php
-                        if(isset($_POST['username'])){
+                        if (isset($_POST['username'])) {
                             echo "<input type='text' name='username' value='{$_POST['username']}' required>";
-                        }else{
+                        } else {
                             echo "<input type='text' name='username' required>";
                         }
                         ?>
