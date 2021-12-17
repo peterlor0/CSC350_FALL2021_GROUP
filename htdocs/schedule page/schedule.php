@@ -108,9 +108,11 @@
                         $tmp3 = $tmp . ", " . $tmp2;
 
                         echo "<p class='item'>
-                                    <label>
+                                <label>
                                     <input data-datetime='{$tmp3}' type='radio' name='slot' value='{$i}' onclick='onClick(this)'>
-                                    {$tmp2}
+                                        <span>
+                                            {$tmp2}
+                                        </span>
                                 </label>
                             </p>";
                     }
