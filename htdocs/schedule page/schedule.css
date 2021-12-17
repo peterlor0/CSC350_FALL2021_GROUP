@@ -90,7 +90,7 @@
     border-radius: 8px;
     margin-top: 6px;
     margin-bottom: 6px;
-    background-color: rgba(58, 58, 58, 0.267);
+    background-color: rgba(58, 58, 58, 0.342);
     
     text-align: left;
 }
@@ -143,6 +143,10 @@
     margin-right: 10px;
     min-width: 260px;
     user-select: none;
+}
+
+.item label{
+    cursor: pointer;
 }
 
 .selection,.slotCount{
