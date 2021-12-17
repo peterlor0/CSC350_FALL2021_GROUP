@@ -19,6 +19,22 @@
     }
 }
 
+.errContainer{
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.192),
+    0 15px 30px rgba(0, 0, 0, 0.185),
+    0 30px 40px rgba(0, 0, 0, 0.171),
+    0 45px 50px rgba(0, 0, 0, 0.171);
+    background-color: rgba(63, 63, 63, 0.507);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    width: fit-content;
+    min-width: 200px;
+    margin: auto;
+    padding: 16px;
+    border-radius: 16px;
+}
+
 .container{
     padding: 16px;
     border-radius: 16px;

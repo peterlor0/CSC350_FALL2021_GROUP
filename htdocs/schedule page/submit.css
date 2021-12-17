@@ -12,6 +12,7 @@ body{
     -webkit-backdrop-filter: blur(20px);
     
     width: fit-content;
+    min-width: 200px;
     margin: auto;
     padding: 16px;
     border-radius: 16px;

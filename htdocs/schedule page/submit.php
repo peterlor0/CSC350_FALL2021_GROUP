@@ -42,22 +42,22 @@
 
             if (isDateTimeInRange($dateOfSelection, getNextSlotDateTime(), $dateOfThisWeek['end'])) {
                 if (isUserAlreadyScheduleThisWeek($conn, $_SESSION['username'])) {
-                    echo "error: already scheduled this week<br>";
+                    echo "<p>error: already scheduled this week</p>";
                 } else {
                     $flag = true;
                 }
             } else if (isDateTimeInRange($dateOfSelection, $dateOfNextWeek['start'], $dateOfNextWeek['end'])) {
                 if (isAvailableForNextWeekSchedule()) {
                     if (isUserAlreadyScheduleNextWeek($conn, $_SESSION['username'])) {
-                        echo "error: already scheduled next week<br>";
+                        echo "<p>error: already scheduled next week</p>";
                     } else {
                         $flag = true;
                     }
                 } else {
-                    echo "error: next week schedule not available<br>";
+                    echo "<p>error: next week schedule not available</p>";
                 }
             } else {
-                echo "error: selection error<br>";
+                echo "<p>error: selection error</p>";
             }
 
 
@@ -71,7 +71,7 @@
                     echo "<p>Succeeded</p>";
                     echo "<p>Your Schedule: {$tmp} </p>";
                 } else {
-                    echo "Error: Other user selected this slot already. Please select another one instead.<br>";
+                    echo "<p>Error: Other user selected this slot already. Please select another one instead.</p>";
                 }
 
                 $conn->close();
@@ -79,7 +79,7 @@
 
             ?>
 
-            <a href="../main page/main.php">Continue</a>
+            <a href="../main page/main.php">Ok</a>
         </div>
 
     <?php

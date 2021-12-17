@@ -74,7 +74,7 @@
             $tmp2 = date("M d, Y, l", strtotime($date['end']) - 1);
             $tmp3 = $_GET['thisweek'] == "1" ? "This Week" : "Next Week";
 
-            echo "<h2>Select A Slot for {$tmp3}</h2>";
+            echo "<h2>Select A Slot For {$tmp3}</h2>";
             echo "<h4>({$tmp} - {$tmp2})</h4>";
             ?>
             <form action="./submit.php" method="post">
@@ -146,9 +146,11 @@
 
     <?php
     } else {
-        echo "<p>Error</p>";
     ?>
-        <p><a href="../main page/main.php"><button type="button">Ok</button></a></p>
+        <div class="errContainer">
+            <p>error</p>
+            <p><a href="../main page/main.php"><button type="button">Ok</button></a></p>
+        </div>
     <?php
     }
 
