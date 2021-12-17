@@ -7,6 +7,10 @@ td{
     padding-bottom: 10px;
 }
 
+h1{
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.473);
+}
+
 .container{
     width: fit-content;
     margin: auto;
