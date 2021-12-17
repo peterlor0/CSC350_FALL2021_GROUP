@@ -89,17 +89,22 @@
     background-color: rgba(54, 54, 54, 0.432);
     user-select: none;
     cursor: pointer;
-    min-height: 30px;
-    vertical-align: middle;
+    min-height: 35px;
     padding-left: 16px;
+    overflow: hidden;
+    line-height: 35px;
+}
+
+.panelHeader.active{
+    background-color: rgba(70, 70, 70, 0.733);
+    color: greenyellow;
+    top: 0px;
+    position: sticky;
+    z-index: 1;
 }
 
 .panelHeader:hover{
     background-color: rgba(112, 112, 112, 0.473);
-}
-
-.panelHeader.active{
-    color: greenyellow;
 }
 
 .panelContent{
@@ -117,7 +122,7 @@
     user-select: none;
 }
 
-.selection{
+.selection,.slotCount{
     color: gold;
 }
 
