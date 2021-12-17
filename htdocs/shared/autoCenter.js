@@ -1,3 +1,5 @@
+// signup page and index page use only
+
 function adjustContainerPos() {
     var el = document.getElementsByClassName("container")[0];
 
