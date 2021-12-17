@@ -15,11 +15,6 @@ body{
     margin: auto;
 }
 
-.right{
-    float: right;
-}
-
-
 .err{
     color: rgb(255, 53, 53);
     text-align: center;
@@ -92,20 +87,48 @@ nav{
 
     border-radius: 0 0 8px 8px;
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.432);
-    padding :6px 6px;
     position: sticky;
     top: 0px;
     z-index: 100;
-    justify-content: space-around;
+    overflow: hidden;
+
     margin-bottom: 30px;
-    text-align: left;
 }
 
 nav div{
-    margin-right: 32px;
-    margin-left: 8px;
-    display: inline-block;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
     user-select: none;
+    float: left;
+}
+
+nav a{
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(32, 178, 171, 0.452);
+
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+nav a:hover{
+    background-color: rgba(40, 211, 202, 0.452);
+    color: whitesmoke;
+}
+
+nav a:active{
+    background-color: rgb(30, 141, 135, 0.452);
+    color: whitesmoke;
+}
+
+nav .right{
+    float: right;
 }
 
 ion-icon{
