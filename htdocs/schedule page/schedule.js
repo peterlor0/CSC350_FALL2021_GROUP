@@ -14,7 +14,7 @@ function onWindowSizeChanged() {
     var el_footer = document.getElementsByClassName("footer")[0];
 
     el_container.style.height = window.innerHeight - (el_container.offsetTop * 2) + "px";
-    el_list.style.maxHeight = el_footer.offsetTop - el_list.offsetTop - 10 + "px";
+    el_list.style.maxHeight = el_footer.offsetTop - el_list.offsetTop + "px";
 }
 
 function onClick(el) {
@@ -25,7 +25,7 @@ function onClick(el) {
     var el_list = document.getElementsByClassName("slotList")[0];
     var el_footer = document.getElementsByClassName("footer")[0];
 
-    el_list.style.maxHeight = el_footer.offsetTop - el_list.offsetTop - 10 + "px";
+    el_list.style.maxHeight = el_footer.offsetTop - el_list.offsetTop + "px";
 }
 
 function onPanelHeaderClick(el) {
