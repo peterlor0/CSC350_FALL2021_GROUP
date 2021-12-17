@@ -264,12 +264,10 @@ function echoNavBar($username, $roomnum)
         <span>{$roomnum}</span>
     </div>";
 
-    echo "
-    <a class='right' href='/shared/logout.php'>
+    echo "<a class='right' href='/shared/logout.php'>
         <ion-icon name='log-out-outline'></ion-icon>
         Logout
-    </a>
-    ";
+    </a>";
 
     echo "</nav>";
 }
