@@ -69,57 +69,56 @@
 
         $day = "";
     ?>
+        <div class="container">
+            <h2>Select a slot</h2>
+            <form action="./submit.php" method="post">
+                <div class="slotList">
 
-        <div class="outerContainer">
-            <div class="container">
-                <h2>Select a slot</h2>
-                <form action="./submit.php" method="post">
-                    <div class="slotList">
+                    <?php
+                    foreach ($slotsAvailable as &$i) {
+                        $day2 = date("w", strtotime($i));
 
-                        <?php
-                        foreach ($slotsAvailable as &$i) {
-                            $day2 = date("w", strtotime($i));
+                        //$tmp,$tmp2,$tmp3 only for display
 
-                            //$tmp,$tmp2,$tmp3 only for display
-
-                            if ($day2 != $day) {
-                                if ($day != "") {
-                                    echo "</div>
+                        if ($day2 != $day) {
+                            if ($day != "") {
+                                echo "</div>
                                         </div>";
-                                }
+                            }
 
-                                $tmp = date("M d, Y, l", strtotime($i));
+                            $tmp = date("M d, Y, l", strtotime($i));
 
-                                echo "<div class='panel'>
+                            echo "<div class='panel'>
                                         <div class='panelHeader' 
                                             onclick='onPanelHeaderClick(this)'>
                                         {$tmp}
                                         </div>
                                     <div class='panelContent'>";
-                            }
+                        }
 
-                            $day = $day2;
+                        $day = $day2;
 
-                            $tmp2 = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
-                            $tmp3 = $tmp . ", " . $tmp2;
+                        $tmp2 = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
+                        $tmp3 = $tmp . ", " . $tmp2;
 
-                            echo "<p class='item'>
+                        echo "<p class='item'>
                                     <label>
                                     <input data-datetime='{$tmp3}' type='radio' name='slot' value='{$i}' onclick='onClick(this)'>
                                     {$tmp2}
                                 </label>
                             </p>";
-                        }
+                    }
 
-                        if ($day != "") {
-                            echo "</div>
+                    if ($day != "") {
+                        echo "</div>
                                 </div>";
-                        }
+                    }
 
-                        ?>
+                    ?>
 
-                    </div>
+                </div>
 
+                <div class="footer">
                     <?php
 
                     $size = count($slotsAvailable);
@@ -133,13 +132,11 @@
                         <a href="/main page/main.php"><button type="button">Cancel</button></a>
                         <input id="submit" type="submit" value="Submit" disabled>
                     </p>
+                </div>
 
-                </form>
+            </form>
 
-            </div>
         </div>
-
-        <script src="./schedule2.js"></script>
 
     <?php
     } else {
@@ -152,7 +149,7 @@
     $conn->close();
 
     ?>
-
+    <script src="./schedule2.js"></script>
 
 </body>
 
