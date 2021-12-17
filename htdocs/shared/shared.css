@@ -88,6 +88,7 @@ nav{
     border-radius: 0 0 8px 8px;
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.432);
     position: sticky;
+    position: -webkit-sticky;
     top: 0px;
     z-index: 100;
     overflow: hidden;

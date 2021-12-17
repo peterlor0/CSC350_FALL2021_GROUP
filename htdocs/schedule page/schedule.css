@@ -120,6 +120,7 @@
     color: greenyellow;
     top: 0px;
     position: sticky;
+    position: -webkit-sticky;
     z-index: 1;
 }
 
