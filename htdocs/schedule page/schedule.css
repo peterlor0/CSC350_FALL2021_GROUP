@@ -95,12 +95,20 @@
     line-height: 35px;
 }
 
+.panelHeader::before{
+    content: '+';
+}
+
 .panelHeader.active{
     background-color: rgba(70, 70, 70, 0.733);
     color: greenyellow;
     top: 0px;
     position: sticky;
     z-index: 1;
+}
+
+.panelHeader.active::before{
+    content: '-';
 }
 
 .panelHeader:hover{
