@@ -26,7 +26,7 @@ a{
 }
 
 a:hover{
-    color: rgb(40, 255, 40);
+    color: rgb(91, 255, 91);
 }
 
 a:active{
@@ -70,6 +70,10 @@ input[type="text"],input[type="password"]{
     transition: all 0.2s;
     font-size: 20px;
     outline-width: 0px;
+}
+
+input[type="text"]::selection,input[type="password"]::selection{
+    background-color: green;
 }
 
 input[type="text"]:hover,input[type="password"]:hover{
