@@ -89,7 +89,7 @@
                             if (isset($flag_username) && !$flag_username) {
                                 echo "<p class='err left' id='username_alert'>Username already in use</p>";
                             } else {
-                                echo "<p class='err left' id='username_alert'></p>";
+                                echo "<p class='err left hide' id='username_alert'></p>";
                             }
                             ?>
                         </td>
@@ -102,7 +102,7 @@
                         </td>
                         <td>
                             <input id="password" type="password" name="password" required>
-                            <p class="err left" id="password_alert"></p>
+                            <p class="err left hide" id="password_alert"></p>
                         </td>
                     </tr>
 
@@ -122,7 +122,7 @@
                             if (isset($flag_roomnum) && !$flag_roomnum) {
                                 echo "<p class='err left' id='roomnum_alert'>Room Number already in use</p>";
                             } else {
-                                echo "<p class='err left' id='roomnum_alert'></p>";
+                                echo "<p class='err left hide' id='roomnum_alert'></p>";
                             }
                             ?>
                         </td>
