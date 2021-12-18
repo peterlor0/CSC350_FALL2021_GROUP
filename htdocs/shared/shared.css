@@ -23,6 +23,7 @@ body{
 a{
     color:rgb(0, 255, 0);
     transition: all 0.2s;
+    -webkit-user-drag: none;
 }
 
 a:hover{
