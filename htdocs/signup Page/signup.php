@@ -57,7 +57,7 @@
         <div class="container">
             <?php
             echo "<p>Account '{$_POST['username']}' Created Successfully</p><br>";
-            echo "<a href='../index.php'>Continue to login</a>";
+            echo "<a href='../index.php'><button>Continue to login</button></a>";
 
             ?>
         </div>

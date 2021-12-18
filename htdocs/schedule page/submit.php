@@ -79,7 +79,7 @@
 
             ?>
 
-            <a href="../main page/main.php">Ok</a>
+            <a href="../main page/main.php"><button>Ok</button></a>
         </div>
 
     <?php
