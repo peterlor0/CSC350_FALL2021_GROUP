@@ -83,7 +83,7 @@ input[type="text"],input[type="password"]{
     background-color: transparent;
     color:whitesmoke;
     border-width: 0px 0px 2px 0px;
-    border-color:rgb(0, 150, 236);
+    border-color:rgb(209, 209, 209);
     border-style: solid;
     transition: all 0.2s;
     font-size: 20px;
