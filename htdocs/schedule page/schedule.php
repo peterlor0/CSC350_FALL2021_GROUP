@@ -126,7 +126,7 @@
                     <?php
 
                     $size = count($slotsAvailable);
-                    echo "<p><span class='slotCount'>{$size}</span> slot(s) available</p>"
+                    echo "<p><span class='slotCount'>{$size}</span> Slot(s) Available</p>"
 
                     ?>
 
