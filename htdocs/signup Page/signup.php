@@ -15,7 +15,7 @@
 
 <body>
     <?php
-    if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['roomnum'])) {
+    if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['aptnum'])) {
         $conn = startSQLConnect();
 
         $flag_succeed = false;
@@ -30,19 +30,19 @@
             $flag_username = true;
         }
 
-        //check room num
-        $sql = "SELECT * FROM mgr.userdata WHERE RoomNum = '{$_POST['roomnum']}'";
+        //check apt num
+        $sql = "SELECT * FROM mgr.userdata WHERE AptNum = '{$_POST['aptnum']}'";
         $query = $conn->query($sql);
 
         if ($query && $query->num_rows > 0) {
-            $flag_roomnum = false;
+            $flag_aptnum = false;
         } else {
-            $flag_roomnum = true;
+            $flag_aptnum = true;
         }
 
-        if ($flag_username && $flag_roomnum) {
-            $sql = "INSERT INTO mgr.userdata (Username, Password, RoomNum)
-            VALUES ('{$_POST['username']}', '{$_POST['password']}', '{$_POST['roomnum']}')";
+        if ($flag_username && $flag_aptnum) {
+            $sql = "INSERT INTO mgr.userdata (Username, Password, AptNum)
+            VALUES ('{$_POST['username']}', '{$_POST['password']}', '{$_POST['aptnum']}')";
 
             if ($conn->query($sql) === TRUE) {
                 $flag_succeed = true;
@@ -108,21 +108,21 @@
 
                     <tr>
                         <td style="vertical-align: top;">
-                            <ion-icon name="home-outline"></ion-icon>
-                            <label>Room:</label>
+                            <ion-icon name="business-outline"></ion-icon>
+                            <label>Apt. Number:</label>
                         </td>
                         <td>
                             <?php
                             if (isset($flag_succeed)) {
-                                echo "<input id='roomnum' type='text' name='roomnum' value='{$_POST['roomnum']}' required>";
+                                echo "<input id='aptnum' type='text' name='aptnum' value='{$_POST['aptnum']}' required>";
                             } else {
-                                echo "<input id='roomnum' type='text' name='roomnum' required>";
+                                echo "<input id='aptnum' type='text' name='aptnum' required>";
                             }
 
-                            if (isset($flag_roomnum) && !$flag_roomnum) {
-                                echo "<p class='err left' id='roomnum_alert'>Room Number already in use</p>";
+                            if (isset($flag_aptnum) && !$flag_aptnum) {
+                                echo "<p class='err left' id='aptnum_alert'>Apt. Number already in use</p>";
                             } else {
-                                echo "<p class='err left hide' id='roomnum_alert'></p>";
+                                echo "<p class='err left hide' id='aptnum_alert'></p>";
                             }
                             ?>
                         </td>

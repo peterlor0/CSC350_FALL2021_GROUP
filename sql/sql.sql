@@ -27,6 +27,7 @@ DROP TABLE IF EXISTS `schedule`;
 CREATE TABLE `schedule` (
   `Date` datetime NOT NULL,
   `Username` varchar(45) NOT NULL,
+  PRIMARY KEY (`Date`),
   UNIQUE KEY `Date_UNIQUE` (`Date`),
   KEY `fk_user_idx` (`Username`),
   CONSTRAINT `fk_user` FOREIGN KEY (`Username`) REFERENCES `userdata` (`Username`)
@@ -52,9 +53,10 @@ DROP TABLE IF EXISTS `userdata`;
 CREATE TABLE `userdata` (
   `Username` varchar(45) NOT NULL,
   `Password` varchar(45) NOT NULL,
-  `RoomNum` varchar(45) NOT NULL,
+  `AptNum` varchar(45) NOT NULL,
+  PRIMARY KEY (`Username`),
   UNIQUE KEY `Username_UNIQUE` (`Username`),
-  UNIQUE KEY `RoomNum_UNIQUE` (`RoomNum`)
+  UNIQUE KEY `RoomNum_UNIQUE` (`AptNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -76,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-10  1:26:20
+-- Dump completed on 2021-12-18 19:42:45

@@ -33,15 +33,15 @@
             $conn = startSQLConnect();
 
             $sql = "SELECT * FROM mgr.userdata WHERE Username='{$_POST['username']}'";
-            $ret = $conn->query($sql);
+            $query = $conn->query($sql);
 
             $flag = false;
 
-            if ($ret) {
-                $row = mysqli_fetch_row($ret);
+            if ($query && $query->num_rows > 0) {
+                $row = mysqli_fetch_assoc($query);
 
                 if ($row) {
-                    if ($row[1] == $_POST['password']) {
+                    if ($row['Password'] == $_POST['password']) {
                         $flag = true;
                     } else { ?>
                         <p class="err">Password incorrect</p>
@@ -59,6 +59,7 @@
 
             if ($flag) {
                 $_SESSION['username'] = $_POST['username'];
+                $_SESSION['aptnum'] = $row['AptNum'];
 
                 redirectPageTo("/main page/main.php");
             }
