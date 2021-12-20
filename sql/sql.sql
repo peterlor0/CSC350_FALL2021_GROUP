@@ -56,7 +56,7 @@ CREATE TABLE `userdata` (
   `AptNum` varchar(45) NOT NULL,
   PRIMARY KEY (`Username`,`AptNum`),
   UNIQUE KEY `Username_UNIQUE` (`Username`),
-  UNIQUE KEY `RoomNum_UNIQUE` (`AptNum`)
+  UNIQUE KEY `AptNum_UNIQUE` (`AptNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -78,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-18 20:16:11
+-- Dump completed on 2021-12-20  0:05:19
