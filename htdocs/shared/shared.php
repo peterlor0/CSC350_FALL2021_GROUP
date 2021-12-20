@@ -247,10 +247,10 @@ function isUserAlreadyScheduleNextWeek($conn, $username)
 
 /** Show Navigation Bar
  *  @param string username Username
- *  @param string roomnum  Room Number
+ *  @param string aptnum  Apt Number
  *  @return none
  */
-function echoNavBar($username, $roomnum)
+function echoNavBar($username, $aptnum)
 {
     echo "<nav>";
 
@@ -259,9 +259,9 @@ function echoNavBar($username, $roomnum)
         <span>{$username}</span>
     </div>";
 
-    echo "<div title='Room Number'>
-        <ion-icon name='home-outline'></ion-icon>
-        <span>{$roomnum}</span>
+    echo "<div title='Apt. Number'>
+        <ion-icon name='business-outline'></ion-icon>
+        <span>{$aptnum}</span>
     </div>";
 
     echo "<a class='right' href='/shared/logout.php'>

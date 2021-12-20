@@ -23,11 +23,7 @@
     if (isset($_POST['slot'])) {
         $conn = startSQLConnect();
 
-        $sql = "SELECT * FROM mgr.userdata WHERE Username='{$_SESSION['username']}'";
-        $query = $conn->query($sql);
-        $row = mysqli_fetch_assoc($query);
-
-        echoNavBar($_SESSION['username'], $row['RoomNum']);
+        echoNavBar($_SESSION['username'], $_SESSION['aptnum']);
 
     ?>
         <div class="container">
@@ -79,7 +75,7 @@
 
             ?>
 
-            <a href="../main page/main.php">Ok</a>
+            <a href="../main page/main.php"><button>Ok</button></a>
         </div>
 
     <?php

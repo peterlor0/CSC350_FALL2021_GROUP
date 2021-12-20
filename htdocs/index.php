@@ -33,35 +33,31 @@
             $conn = startSQLConnect();
 
             $sql = "SELECT * FROM mgr.userdata WHERE Username='{$_POST['username']}'";
-            $ret = $conn->query($sql);
+            $query = $conn->query($sql);
 
             $flag = false;
 
-            if ($ret) {
-                $row = mysqli_fetch_row($ret);
+            if ($query && $query->num_rows > 0) {
+                $row = mysqli_fetch_assoc($query);
 
-                if ($row) {
-                    if ($row[1] == $_POST['password']) {
-                        $flag = true;
-                    } else { ?>
-                        <p class="err">Password incorrect</p>
-                    <?php
-                    }
-                } else { ?>
-                    <p class="err">Username not found</p>
-        <?php
+                if ($row['Password'] == $_POST['password']) {
+                    $flag = true;
+                } else {
+                    echo "<p class='err'>Password incorrect</p>";
                 }
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "<p class='err'>Account not found</p>";
             }
 
-            $conn->close();
 
             if ($flag) {
                 $_SESSION['username'] = $_POST['username'];
+                $_SESSION['aptnum'] = $row['AptNum'];
 
                 redirectPageTo("/main page/main.php");
             }
+
+            $conn->close();
         }
         ?>
 

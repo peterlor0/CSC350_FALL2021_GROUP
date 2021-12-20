@@ -20,11 +20,7 @@
 
     $conn = startSQLConnect();
 
-    $sql = "SELECT * FROM mgr.userdata WHERE Username='{$_SESSION['username']}'";
-    $query = $conn->query($sql);
-    $row = mysqli_fetch_assoc($query);
-
-    echoNavBar($_SESSION['username'], $row['RoomNum']);
+    echoNavBar($_SESSION['username'], $_SESSION['aptnum']);
 
     $flag = true;
 
@@ -119,7 +115,7 @@
 
                     if ($day != "") {
                         echo "</div>
-                                </div>";
+                            </div>";
                     }
 
                     ?>
@@ -130,7 +126,7 @@
                     <?php
 
                     $size = count($slotsAvailable);
-                    echo "<p><span class='slotCount'>{$size}</span> slot(s) available</p>"
+                    echo "<p><span class='slotCount'>{$size}</span> Slot(s) Available</p>"
 
                     ?>
 
