@@ -32,7 +32,7 @@
     $date2 = date("M d, Y, l", strtotime($date['end']) - 1);
 
     echo "<div class='container'>";
-    echo "<h2>Your Schdule</h2><hr>";
+    echo "<h2>Your Schedule</h2><hr>";
     echo "<h3 class='date'>This Week ({$date1} - {$date2}):</h3>";
 
     if ($query && $query->num_rows > 0) {
