@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared/shared.php" ?>
+<?php require "../shared/shared.php"; ?>
 
 <html>
 
 <head>
     <title>Submit Schedule</title>
-    <link rel="stylesheet" href="/shared/shared.css">
     <link rel="stylesheet" href="submit.css">
+    <link rel="stylesheet" href="../shared/shared.css">
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -18,7 +18,11 @@
     <?php
 
     session_start();
-    checkLoginState();
+    if (!isset($_SESSION['username'])) {
+        session_unset();
+        session_destroy();
+        redirectPageTo("../index.php");
+    }
 
     if (isset($_POST['slot'])) {
         $conn = startSQLConnect();

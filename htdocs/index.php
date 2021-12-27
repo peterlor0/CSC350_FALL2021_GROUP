@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared/shared.php"; ?>
+<?php require "shared/shared.php"; ?>
 
 <html>
 
 <head>
     <title>ABC laundry login</title>
-    <link rel="stylesheet" href="/shared/shared.css">
-    <link rel="stylesheet" href="./index.css">
-
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="shared/shared.css">
+    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
@@ -17,7 +17,7 @@
     <?php
     session_start();
     if (isset($_SESSION['username'])) {
-        redirectPageTo("/main page/main.php");
+        redirectPageTo("main page/main.php");
     }
 
     ?>
@@ -54,7 +54,7 @@
                 $_SESSION['username'] = $_POST['username'];
                 $_SESSION['aptnum'] = $row['AptNum'];
 
-                redirectPageTo("/main page/main.php");
+                redirectPageTo("main page/main.php");
             }
 
             $conn->close();
@@ -94,14 +94,14 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        Don't have an account? <a href="./signup page/signup.php">Signup</a> now
+                        Don't have an account? <a href="signup page/signup.php">Signup</a> now
                     </td>
                 </tr>
             </table>
         </form>
     </div>
 
-    <script src="/shared/autoCenter.js"></script>
+    <script src="shared/autoCenter.js"></script>
 
 </body>
 

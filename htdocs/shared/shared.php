@@ -32,19 +32,6 @@ function redirectPageTo($path)
     exit();
 }
 
-/** Check if the user has logged in, if is not, redirect to index page.
- * call session_start() before use this function
- * @return None
- */
-function checkLoginState()
-{
-    if (!isset($_SESSION['username'])) {
-        session_unset();
-        session_destroy();
-        redirectPageTo("/index.php");
-    }
-}
-
 /** Get the date of this Monday.
  * @return string datetime
  */

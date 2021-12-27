@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared/shared.php" ?>
+<?php require "../shared/shared.php" ?>
 
 <html>
 
 <head>
     <title>Schedule</title>
-    <link rel="stylesheet" href="/shared/shared.css">
     <link rel="stylesheet" href="schedule.css">
-
+    <link rel="stylesheet" href="../shared/shared.css">
+    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
@@ -16,7 +16,11 @@
 <body>
     <?php
     session_start();
-    checkLoginState();
+    if (!isset($_SESSION['username'])) {
+        session_unset();
+        session_destroy();
+        redirectPageTo("../index.php");
+    }
 
     $conn = startSQLConnect();
 
@@ -73,7 +77,7 @@
             echo "<h2>Select A Slot For {$tmp3}</h2>";
             echo "<h4>({$tmp} - {$tmp2})</h4>";
             ?>
-            <form action="./submit.php" method="post">
+            <form action="submit.php" method="post">
                 <div class="slotList">
 
                     <?php
@@ -133,7 +137,7 @@
                     <p>Your Selection: <span id="selection" class="selection">None</span></p>
 
                     <p>
-                        <a href="/main page/main.php"><button type="button">Cancel</button></a>
+                        <a href="../main page/main.php"><button type="button">Cancel</button></a>
                         <input id="submit" type="submit" value="Submit" disabled>
                     </p>
                 </div>
@@ -155,7 +159,7 @@
     $conn->close();
 
     ?>
-    <script src="./schedule.js"></script>
+    <script src="schedule.js"></script>
 
 </body>
 

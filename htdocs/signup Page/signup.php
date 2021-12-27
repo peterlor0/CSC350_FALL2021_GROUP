@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/shared/shared.php" ?>
+<?php require "../shared/shared.php"; ?>
 
 <html>
 
 <head>
     <title>SignUp</title>
-    <link rel="stylesheet" href="/shared/shared.css">
     <link rel="stylesheet" href="signup.css">
-    <script src="./signup.js"></script>
+    <link rel="stylesheet" href="../shared/shared.css">
+    
+    <script src="signup.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
@@ -150,7 +151,7 @@
 
     ?>
 
-    <script src="/shared/autoCenter.js"></script>
+    <script src="../shared/autoCenter.js"></script>
 
 </body>
 

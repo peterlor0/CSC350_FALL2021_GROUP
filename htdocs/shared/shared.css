@@ -3,8 +3,7 @@ body{
     color:whitesmoke;
     background-color: rgb(54, 54, 54);
     margin: 0px;
-
-    background: url("/res/background.jpg"); 
+ 
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
