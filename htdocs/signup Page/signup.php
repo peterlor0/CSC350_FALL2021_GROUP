@@ -138,7 +138,8 @@
                     <tr>
                         <td colspan="2">
                             <a href="../index.php">
-                                <ion-icon name="chevron-back-outline"></ion-icon>Back
+                                <ion-icon name="chevron-back-outline"></ion-icon>
+                                Back
                             </a>
                         </td>
                     </tr>
