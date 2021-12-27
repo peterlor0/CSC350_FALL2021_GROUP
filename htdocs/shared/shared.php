@@ -260,5 +260,3 @@ function echoNavBar($username, $aptnum)
 }
 
 ?>
-
-<?php  ?>
