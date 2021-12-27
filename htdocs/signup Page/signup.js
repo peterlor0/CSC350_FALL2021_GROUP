@@ -21,7 +21,7 @@ function submitCheck() {
 
     if (username.includes(' ')) {
         document.getElementById("username_alert").textContent = "Username cannot includes white space";
-        document.getElementById("username_alert").classList.add("hide");
+        document.getElementById("username_alert").classList.remove("hide");
     } else {
         flag_username = true;
     }
