@@ -232,31 +232,29 @@ function isUserAlreadyScheduleNextWeek($conn, $username)
     }
 }
 
-<<<<<<< HEAD
 /** Echo Navigation Bar
  *  @param array A userdata array
-=======
-/** Show Navigation Bar
- *  @param string username Username
- *  @param string aptnum  Apt Number
->>>>>>> parent of 988ab45 (added mutiuser login on one browser support)
  *  @return none
  */
-function echoNavBar($username, $aptnum)
+function echoNavBar($userdata)
 {
+    if($userdata==null){
+        return;
+    }
+
     echo "<nav>";
 
     echo "<div title='Username'>
         <ion-icon name='person-circle-outline'></ion-icon>
-        <span>{$username}</span>
+        <span>{$userdata['username']}</span>
     </div>";
 
     echo "<div title='Apt. Number'>
         <ion-icon name='business-outline'></ion-icon>
-        <span>{$aptnum}</span>
+        <span>{$userdata['aptnum']}</span>
     </div>";
 
-    echo "<a class='right' href='../shared/logout.php'>
+    echo "<a class='right' href='../shared/logout.php?uuid={$userdata['uuid']}'>
         <ion-icon name='log-out-outline'></ion-icon>
         Logout
     </a>";
@@ -264,7 +262,6 @@ function echoNavBar($username, $aptnum)
     echo "</nav>";
 }
 
-<<<<<<< HEAD
 //for session*** function, you must call session_start() first
 
 /** Add an user to session, if the username already exist, return the current uuid
@@ -353,6 +350,3 @@ function sessionRemoveUserByUUID($uuid){
 }
 
 ?>
-=======
-?>
->>>>>>> parent of 988ab45 (added mutiuser login on one browser support)
