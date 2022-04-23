@@ -18,7 +18,6 @@
     <?php
 
     session_start();
-
     //var_dump($_SESSION);
 
     //if there's no uuid, redirect to index.php
