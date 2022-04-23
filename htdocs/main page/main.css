@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+    background: url("../res/background.jpg");
+}
+
+.date{
+    color: gold;
+}
+
+p{
+    text-align: left;
+}
+
+.container{
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.192),
+    0 15px 30px rgba(0, 0, 0, 0.185),
+    0 30px 40px rgba(0, 0, 0, 0.171),
+    0 45px 50px rgba(0, 0, 0, 0.171);
+    background-color: rgba(56, 56, 56, 0.281);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    width: fit-content;
+    margin: auto;
+    padding: 16px;
+    border-radius: 16px;
+}
