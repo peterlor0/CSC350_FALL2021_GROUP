@@ -16,26 +16,20 @@
 <body>
     <?php
     session_start();
-    var_dump($_SESSION);
-
-    //if no uuid, redirect to index.php
-    if (!isset($_GET['uuid'])) {
-        redirectPageTo("../index.php");
-    }
-
-    $userdata = sessionGetDataByUUID($_GET['uuid']);
-    if ($userdata == null) {
+    if (!isset($_SESSION['username'])) {
+        session_unset();
+        session_destroy();
         redirectPageTo("../index.php");
     }
 
     $conn = startSQLConnect();
 
-    echoNavBar($userdata);
+    echoNavBar($_SESSION['username'], $_SESSION['aptnum']);
 
     //this week
 
     $date = getDateTimeRangeOfThisWeekSchedule();
-    $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$userdata['username']}'";
+    $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$_SESSION['username']}'";
     $query = $conn->query($sql);
 
     $date1 = date("M d, Y, l", strtotime($date['start']));
@@ -59,11 +53,9 @@
 
     ?>
             <p>
-                <?php
-                echo "<a href='../schedule page/schedule.php?thisweek=1&uuid={$userdata['uuid']}'>";
-                ?>
-                <ion-icon name="calendar-outline"></ion-icon>
-                Schedule
+                <a href="../schedule page/schedule.php?thisweek=1">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    Schedule
                 </a>
             </p>
 
@@ -75,7 +67,7 @@
     //next week
     if (isAvailableForNextWeekSchedule()) {
         $date = getDateTimeRangeOfNextWeekSchedule();
-        $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$userdata['username']}'";
+        $sql = "SELECT Date FROM mgr.schedule WHERE Date >= '{$date['start']}' AND Date < '{$date['end']}' AND Username = '{$_SESSION['username']}'";
         $query = $conn->query($sql);
 
         $date1 = date("M d, Y, l", strtotime($date['start']));
@@ -91,11 +83,9 @@
         } else {
         ?>
             <p>
-                <?php
-                echo "<a href='../schedule page/schedule.php?thisweek=0&uuid={$userdata['uuid']}'>";
-                ?>
-                <ion-icon name="calendar-outline"></ion-icon>
-                Schedule
+                <a href="../schedule page/schedule.php?thisweek=0">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    Schedule
                 </a>
             </p>
     <?php
