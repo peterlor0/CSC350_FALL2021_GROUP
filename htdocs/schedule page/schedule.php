@@ -8,7 +8,7 @@
     <title>Schedule</title>
     <link rel="stylesheet" href="schedule.css">
     <link rel="stylesheet" href="../shared/shared.css">
-
+    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
@@ -16,6 +16,7 @@
 <body>
     <?php
     session_start();
+<<<<<<< HEAD
     //var_dump($_SESSION);
 
     //if there's no uuid, redirect to index.php
@@ -25,12 +26,17 @@
 
     $userdata = sessionGetDataByUUID($_GET['uuid']);
     if ($userdata == null) {
+=======
+    if (!isset($_SESSION['username'])) {
+        session_unset();
+        session_destroy();
+>>>>>>> parent of 988ab45 (added mutiuser login on one browser support)
         redirectPageTo("../index.php");
     }
 
     $conn = startSQLConnect();
 
-    echoNavBar($userdata);
+    echoNavBar($_SESSION['username'], $_SESSION['aptnum']);
 
     $flag = true;
 
@@ -38,7 +44,7 @@
         //this week
         $date = getDateTimeRangeOfThisWeekSchedule();
 
-        if (isUserAlreadyScheduleThisWeek($conn, $userdata['username'])) {
+        if (isUserAlreadyScheduleThisWeek($conn, $_SESSION['username'])) {
             $flag = false;
         } else {
             $fullSlotsList = generateSlotsByRange(getNextSlotDateTime(), $date['end']);
@@ -49,7 +55,7 @@
             $flag = false;
         }
 
-        if (isUserAlreadyScheduleNextWeek($conn, $userdata['username'])) {
+        if (isUserAlreadyScheduleNextWeek($conn, $_SESSION['username'])) {
             $flag = false;
         }
 
@@ -82,41 +88,38 @@
 
             echo "<h2>Select A Slot For {$tmp3}</h2>";
             echo "<h4>({$tmp} - {$tmp2})</h4>";
-
-            //form begin
-            echo "<form action='submit.php?uuid={$userdata['uuid']}' method='post'>";
             ?>
+            <form action="submit.php" method="post">
+                <div class="slotList">
 
-            <div class="slotList">
+                    <?php
+                    foreach ($slotsAvailable as &$i) {
+                        $day2 = date("w", strtotime($i));
 
-                <?php
-                foreach ($slotsAvailable as &$i) {
-                    $day2 = date("w", strtotime($i));
+                        //$tmp,$tmp2,$tmp3 only for display
 
-                    //$tmp,$tmp2,$tmp3 only for display
-
-                    if ($day2 != $day) {
-                        if ($day != "") {
-                            echo "</div>
+                        if ($day2 != $day) {
+                            if ($day != "") {
+                                echo "</div>
                                         </div>";
-                        }
+                            }
 
-                        $tmp = date("M d, Y, l", strtotime($i));
+                            $tmp = date("M d, Y, l", strtotime($i));
 
-                        echo "<div class='panel'>
+                            echo "<div class='panel'>
                                         <div class='panelHeader' 
                                             onclick='onPanelHeaderClick(this)'>
                                         {$tmp}
                                         </div>
                                     <div class='panelContent'>";
-                    }
+                        }
 
-                    $day = $day2;
+                        $day = $day2;
 
-                    $tmp2 = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
-                    $tmp3 = $tmp . ", " . $tmp2;
+                        $tmp2 = date("h:i A", strtotime($i)) . " - " . date("h:i A", strtotime($i) + 3600 * 3 - 1);
+                        $tmp3 = $tmp . ", " . $tmp2;
 
-                    echo "<p class='item'>
+                        echo "<p class='item'>
                                 <label>
                                     <input data-datetime='{$tmp3}' type='radio' name='slot' value='{$i}' onclick='onClick(this)'>
                                         <span>
@@ -124,39 +127,34 @@
                                         </span>
                                 </label>
                             </p>";
-                }
+                    }
 
-                if ($day != "") {
-                    echo "</div>
+                    if ($day != "") {
+                        echo "</div>
                             </div>";
-                }
+                    }
 
-                ?>
-
-            </div>
-
-            <div class="footer">
-                <?php
-
-                $size = count($slotsAvailable);
-                echo "<p><span class='slotCount'>{$size}</span> Slot(s) Available</p>"
-
-                ?>
-
-                <p>Your Selection: <span id="selection" class="selection">None</span></p>
-
-                <p>
-                    <?php
-                    echo "<a href='../main page/main.php?uuid={$userdata['uuid']}'><button type='button'>Cancel</button></a>";
                     ?>
-                    <input id="submit" type="submit" value="Submit" disabled>
-                </p>
-            </div>
 
-            <?php
-            //form end
-            echo "</form>";
-            ?>
+                </div>
+
+                <div class="footer">
+                    <?php
+
+                    $size = count($slotsAvailable);
+                    echo "<p><span class='slotCount'>{$size}</span> Slot(s) Available</p>"
+
+                    ?>
+
+                    <p>Your Selection: <span id="selection" class="selection">None</span></p>
+
+                    <p>
+                        <a href="../main page/main.php"><button type="button">Cancel</button></a>
+                        <input id="submit" type="submit" value="Submit" disabled>
+                    </p>
+                </div>
+
+            </form>
 
         </div>
 
@@ -165,10 +163,7 @@
     ?>
         <div class="errContainer">
             <p>error</p>
-            <?php
-            echo "<p><a href='../main page/main.php?uuid={$userdata['uuid']}'><button type='button'>Ok</button></a></p>";
-            ?>
-
+            <p><a href="../main page/main.php"><button type="button">Ok</button></a></p>
         </div>
     <?php
     }
