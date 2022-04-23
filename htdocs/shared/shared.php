@@ -260,6 +260,7 @@ function echoNavBar($username, $aptnum)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //for session*** function, you must call session_start() first
 
 /** Add an user to session, if the username already exist, return the current uuid
@@ -334,6 +335,9 @@ function sessionRemoveUserByUUID($uuid){
 }
 
 ?>
+=======
+?>
+>>>>>>> parent of 988ab45 (added mutiuser login on one browser support)
 =======
 ?>
 >>>>>>> parent of 988ab45 (added mutiuser login on one browser support)
