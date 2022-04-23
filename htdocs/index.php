@@ -8,7 +8,7 @@
     <title>ABC laundry login</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="shared/shared.css">
-    
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
@@ -16,10 +16,7 @@
 <body>
     <?php
     session_start();
-    if (isset($_SESSION['username'])) {
-        redirectPageTo("main page/main.php");
-    }
-
+    var_dump($_SESSION);
     ?>
 
     <h1>Welcome to ABC laundry room</h1>
@@ -51,10 +48,9 @@
 
 
             if ($flag) {
-                $_SESSION['username'] = $_POST['username'];
-                $_SESSION['aptnum'] = $row['AptNum'];
+                $uuid = sessionAddUser($_POST['username'], $row['AptNum']);
 
-                redirectPageTo("main page/main.php");
+                redirectPageTo("main page/main.php?uuid={$uuid}");
             }
 
             $conn->close();

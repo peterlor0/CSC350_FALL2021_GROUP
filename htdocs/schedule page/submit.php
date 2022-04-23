@@ -18,16 +18,24 @@
     <?php
 
     session_start();
-    if (!isset($_SESSION['username'])) {
-        session_unset();
-        session_destroy();
+
+    var_dump($_SESSION);
+
+    //if no uuid, redirect to index.php
+    if (!isset($_GET['uuid'])) {
         redirectPageTo("../index.php");
     }
+
+    $userdata = sessionGetDataByUUID($_GET['uuid']);
+    if ($userdata == null) {
+        redirectPageTo("../index.php");
+    }
+
 
     if (isset($_POST['slot'])) {
         $conn = startSQLConnect();
 
-        echoNavBar($_SESSION['username'], $_SESSION['aptnum']);
+        echoNavBar($userdata);
 
     ?>
         <div class="container">
@@ -41,14 +49,14 @@
             $flag = false;
 
             if (isDateTimeInRange($dateOfSelection, getNextSlotDateTime(), $dateOfThisWeek['end'])) {
-                if (isUserAlreadyScheduleThisWeek($conn, $_SESSION['username'])) {
+                if (isUserAlreadyScheduleThisWeek($conn, $userdata['username'])) {
                     echo "<p>error: already scheduled this week</p>";
                 } else {
                     $flag = true;
                 }
             } else if (isDateTimeInRange($dateOfSelection, $dateOfNextWeek['start'], $dateOfNextWeek['end'])) {
                 if (isAvailableForNextWeekSchedule()) {
-                    if (isUserAlreadyScheduleNextWeek($conn, $_SESSION['username'])) {
+                    if (isUserAlreadyScheduleNextWeek($conn, $userdata['username'])) {
                         echo "<p>error: already scheduled next week</p>";
                     } else {
                         $flag = true;
@@ -63,7 +71,7 @@
 
             if ($flag) {
                 $sql = "INSERT INTO mgr.schedule (Date, Username)
-        VALUES ('{$_POST['slot']}', '{$_SESSION['username']}')";
+        VALUES ('{$_POST['slot']}', '{$userdata['username']}')";
 
                 if ($conn->query($sql) === TRUE) {
                     $tmp = date("M d, Y, l, h:i A", strtotime($_POST['slot'])) . " - " . date("h:i A", strtotime($_POST['slot']) + 3600 * 3 - 1);
@@ -77,14 +85,15 @@
                 $conn->close();
             }
 
+            echo "<a href='../main page/main.php?uuid={$userdata['uuid']}'><button>Ok</button></a>";
+
             ?>
 
-            <a href="../main page/main.php"><button>Ok</button></a>
         </div>
 
     <?php
     } else {
-        redirectPageTo("/main page/main.php");
+        redirectPageTo("../main page/main.php?uuid={$userdata['uuid']}");
     }
 
     ?>

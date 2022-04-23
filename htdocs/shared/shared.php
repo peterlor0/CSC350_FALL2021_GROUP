@@ -233,30 +233,106 @@ function isUserAlreadyScheduleNextWeek($conn, $username)
 }
 
 /** Show Navigation Bar
- *  @param string username Username
- *  @param string aptnum  Apt Number
+ *  @param array A userdata array
  *  @return none
  */
-function echoNavBar($username, $aptnum)
+function echoNavBar($userdata)
 {
+    if($userdata==null){
+        return;
+    }
+
     echo "<nav>";
 
     echo "<div title='Username'>
         <ion-icon name='person-circle-outline'></ion-icon>
-        <span>{$username}</span>
+        <span>{$userdata['username']}</span>
     </div>";
 
     echo "<div title='Apt. Number'>
         <ion-icon name='business-outline'></ion-icon>
-        <span>{$aptnum}</span>
+        <span>{$userdata['aptnum']}</span>
     </div>";
 
-    echo "<a class='right' href='../shared/logout.php'>
+    echo "<a class='right' href='../shared/logout.php?uuid={$userdata['uuid']}'>
         <ion-icon name='log-out-outline'></ion-icon>
         Logout
     </a>";
 
     echo "</nav>";
+}
+
+//for session*** function, you must call session_start() first
+
+/** Add an user to session, if the username already exist, return the current uuid
+ *  @param string username Username
+ *  @param string aptnum apt. num
+ *  @return string uuid
+ */
+function sessionAddUser($username, $aptnum){
+    if(!isset($_SESSION['userlist'])){
+        $_SESSION['userlist']=array();
+    }
+
+    //item structure: {uuid,username,aptnum}
+
+    //find if the username already exist
+    foreach($_SESSION['userlist'] as &$item){
+        if($item['username'] == $username){
+            return $item['uuid'];
+        }
+    }
+
+    $uuid = uniqid("", true);
+
+    //if the username does not exist, create a new one and add to the list
+    array_push($_SESSION['userlist'],
+        array(
+            'uuid'     => $uuid,
+            'username' => $username,
+            'aptnum'   => $aptnum
+        )
+    );
+
+    return $uuid;
+}
+
+function sessionGetDataByUUID($uuid){
+    if(isset($_SESSION['userlist'])){
+        foreach($_SESSION['userlist'] as &$item){
+            if($item['uuid'] == $uuid){
+                return $item;
+            }
+        }
+    }
+
+    return null;
+}
+
+function sessionGetDateByUsername($username){
+    if(isset($_SESSION['userlist'])){
+        foreach($_SESSION['userlist'] as &$item){
+            if($item['username'] == $username){
+                return $item;
+            }
+        }
+    }
+
+    return null;
+}
+
+function sessionRemoveUserByUUID($uuid){
+    if(isset($_SESSION['userlist'])){
+        $index = 0;
+        foreach($_SESSION['userlist'] as &$item){
+            if($item['uuid'] == $uuid){
+                unset($_SESSION['userlist'][$index]);
+                return;
+            }
+
+            $index++;
+        }
+    }
 }
 
 ?>

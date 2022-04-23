@@ -2,8 +2,10 @@
     require "shared.php";
 
     session_start();
-    session_unset();
-    session_destroy();
+    var_dump($_SESSION);
+    if(isset($_GET['uuid'])){
+        sessionRemoveUserByUUID($_GET['uuid']);
+    }
 
     redirectPageTo("../index.php");
 ?>
