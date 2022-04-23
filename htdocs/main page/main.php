@@ -16,9 +16,9 @@
 <body>
     <?php
     session_start();
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
 
-    //if no uuid, redirect to index.php
+    //if there's no uuid, redirect to index.php
     if (!isset($_GET['uuid'])) {
         redirectPageTo("../index.php");
     }
@@ -52,7 +52,7 @@
         echo "<p><ion-icon name='time-outline'></ion-icon>" . date("Y-m-d, l, h:i A", $tm) . " - " . date("h:i A", $tm + 3600 * 3 - 1) . "</p>";
     } else {
 
-        //if time passed this last slot and user did not schedule this week, echo "n/a"
+        //if time passed the last slot and user did not schedule this week, echo "n/a"
         if (time() > strtotime(getDateTimeOfLastSlotOfThisWeek())) {
             echo "<p>N/A</p>";
         } else {

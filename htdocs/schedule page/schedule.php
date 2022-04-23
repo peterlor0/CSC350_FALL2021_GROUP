@@ -16,9 +16,9 @@
 <body>
     <?php
     session_start();
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
 
-    //if no uuid, redirect to index.php
+    //if there's no uuid, redirect to index.php
     if (!isset($_GET['uuid'])) {
         redirectPageTo("../index.php");
     }

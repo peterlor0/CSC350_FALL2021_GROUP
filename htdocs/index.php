@@ -16,7 +16,7 @@
 <body>
     <?php
     session_start();
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     ?>
 
     <h1>Welcome to ABC laundry room</h1>

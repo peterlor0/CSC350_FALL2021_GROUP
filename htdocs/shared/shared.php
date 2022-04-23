@@ -232,7 +232,7 @@ function isUserAlreadyScheduleNextWeek($conn, $username)
     }
 }
 
-/** Show Navigation Bar
+/** Echo Navigation Bar
  *  @param array A userdata array
  *  @return none
  */
@@ -297,6 +297,10 @@ function sessionAddUser($username, $aptnum){
     return $uuid;
 }
 
+/** Gets userdata by uuid
+ *  @param string uuid UUID
+ *  @return array An array contains the userdata, or null if username does not exist
+ */
 function sessionGetDataByUUID($uuid){
     if(isset($_SESSION['userlist'])){
         foreach($_SESSION['userlist'] as &$item){
@@ -309,6 +313,10 @@ function sessionGetDataByUUID($uuid){
     return null;
 }
 
+/** Gets userdata by username
+ *  @param string username Username
+ *  @return array An array contains the userdata, or null if username does not exist
+ */
 function sessionGetDateByUsername($username){
     if(isset($_SESSION['userlist'])){
         foreach($_SESSION['userlist'] as &$item){
@@ -321,18 +329,24 @@ function sessionGetDateByUsername($username){
     return null;
 }
 
+/** Remove an user from session by uuid
+ *  @param string uuid UUID
+ *  @return boolean True if succeed
+ */
 function sessionRemoveUserByUUID($uuid){
     if(isset($_SESSION['userlist'])){
         $index = 0;
         foreach($_SESSION['userlist'] as &$item){
             if($item['uuid'] == $uuid){
                 array_splice($_SESSION['userlist'],$index,1);
-                return;
+                return true;
             }
 
             $index++;
         }
     }
+
+    return false;
 }
 
 ?>
