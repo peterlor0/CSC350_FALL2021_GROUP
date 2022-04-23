@@ -283,7 +283,7 @@ function sessionAddUser($username, $aptnum){
         }
     }
 
-    $uuid = uniqid("", true);
+    $uuid = uniqid(strval(time()), true);
 
     //if the username does not exist, create a new one and add to the list
     array_push($_SESSION['userlist'],
@@ -326,7 +326,7 @@ function sessionRemoveUserByUUID($uuid){
         $index = 0;
         foreach($_SESSION['userlist'] as &$item){
             if($item['uuid'] == $uuid){
-                unset($_SESSION['userlist'][$index]);
+                array_splice($_SESSION['userlist'],$index,1);
                 return;
             }
 
