@@ -72,12 +72,16 @@
                 $sql = "INSERT INTO mgr.schedule (Date, Username)
         VALUES ('{$_POST['slot']}', '{$userdata['username']}')";
 
-                if ($conn->query($sql) === TRUE) {
-                    $tmp = date("M d, Y, l, h:i A", strtotime($_POST['slot'])) . " - " . date("h:i A", strtotime($_POST['slot']) + 3600 * 3 - 1);
+                try {
+                    if ($conn->query($sql) === TRUE) {
+                        $tmp = date("M d, Y, l, h:i A", strtotime($_POST['slot'])) . " - " . date("h:i A", strtotime($_POST['slot']) + 3600 * 3 - 1);
 
-                    echo "<p>Succeeded</p>";
-                    echo "<p>Your Schedule: {$tmp} </p>";
-                } else {
+                        echo "<p>Succeeded</p>";
+                        echo "<p>Your Schedule: {$tmp} </p>";
+                    } else {
+                        echo "<p>Error: Other user selected this slot already. Please select another one instead.</p>";
+                    }
+                } catch (Exception $ex) {
                     echo "<p>Error: Other user selected this slot already. Please select another one instead.</p>";
                 }
 
