@@ -65,6 +65,10 @@ button,input[type="submit"]{
     cursor: pointer;
 }
 
+input[type="submit"]{
+    -webkit-appearance: none;
+}
+
 button:hover,input[type="submit"]:hover{
     background-color: rgb(11, 128, 253);
 }

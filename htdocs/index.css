@@ -28,3 +28,20 @@ h1{
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 }
+
+/* screen width <= 500 */
+@media (max-width: 500px)  {
+    h1{
+        font-size: 30px;
+    }
+
+     input[type="text"],input[type="password"]{
+         width: 95%;
+     }
+}
+
+@media (max-width: 380px){
+    h1{
+        font-size: 25px;
+    }
+}

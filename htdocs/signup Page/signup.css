@@ -7,6 +7,7 @@ table{
     text-align: left;
 }
 
+
 .err.left{
     text-align: left;
 }
@@ -30,4 +31,11 @@ td{
     background-color: rgba(56, 56, 56, 0.281);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+}
+
+/* screen width <= 500 */
+@media (max-width: 500px)  {
+    input[type="text"],input[type="password"]{
+        width: 95%;
+    }
 }
